@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'Playfair Display';
+  font-family: 'Playfair Display', serif;
   src: url('./assets/fonts/PlayfairDisplay-Italic.ttf') format('truetype');
     
   font-style: normal;
@@ -13,4 +13,6 @@
   box-sizing:border-box;
  }
   
- 
+ a {
+  text-decoration: none !important;
+}

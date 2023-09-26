@@ -8,33 +8,35 @@ const Footer = () => {
   return (
     <div>
       <Box sx={{
-        height: "28vh",
-        backgroundColor: "#1E1E1E        ",
+        height: "32vh",
+        backgroundColor: "#1E1E1E",
         color: "white",
         paddingTop: "20px",
         paddingLeft: "20px",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "space-between"
+        justifyContent: "space-between" ,
+                alignItems: "flex-end", // Alinea los elementos al final
+
       }}>
-        <Grid container rowSpacing={2} columnSpacing={2}> {/* Ajusta rowSpacing y columnSpacing al mismo valor */}
-          <Grid item xs={5.9} sx={{ display: 'flex', alignItems: 'center' }}>
+        <Grid container rowSpacing={2} columnSpacing={4} > {/* Establece el mismo valor para rowSpacing y columnSpacing */}
+          <Grid item xs={5.9}  sx={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}>
             <img src={icono1} alt="Logo" style={{ width: "30px", height: "30px" }} />
           </Grid>
-          <Grid item xs={5.9} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
-            <Typography sx={{ fontSize: "30px" }}> TechX </Typography>
+          <Grid item xs={5.9}  sx={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
+            <Typography style={{ fontFamily: 'Playfair Display, serif', fontSize: "48px" }}> TechX </Typography>
           </Grid>
-          <Grid item xs={5.9} sx={{ display: 'flex', alignItems: 'center' }}>
+          <Grid item xs={5.9} sx={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}>
             <img src={icono2} alt="Logo" style={{ width: "30px", height: "30px" }} />
           </Grid>
-          <Grid item xs={5.9} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
-            <Typography> Todos Los derechos Reservados © </Typography>
+          <Grid item xs={5.9} sx={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
+            <Typography style={{ fontFamily: 'Playfair Display, serif', fontSize: "16px" }}> Todos Los derechos Reservados © </Typography>
           </Grid>
-          <Grid item xs={5.9} sx={{ display: 'flex', alignItems: 'center' }}>
+          <Grid item xs={5.9} sx={{ display: 'flex',justifyContent: 'flex-start', alignItems: 'center',marginTop:"20px" }}>
             <img src={icono3} alt="Logo" style={{ width: "30px", height: "30px" }} />
           </Grid>
-          <Grid item xs={5.9} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
-            <Typography> Hermosillo, Sonora,Mexico </Typography>
+          <Grid item xs={5.9} sx={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
+            <Typography style={{ fontFamily: 'Playfair Display, serif', fontSize: "16px" }}> Hermosillo, Sonora, Mexico </Typography>
           </Grid>
         </Grid>
       </Box>
@@ -43,3 +45,4 @@ const Footer = () => {
 }
 
 export default Footer;
+

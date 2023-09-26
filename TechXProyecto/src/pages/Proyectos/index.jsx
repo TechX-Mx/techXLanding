@@ -1,5 +1,5 @@
 import { Box, Grid, Link, Typography } from '@mui/material';
-import React from 'react';
+import React, { useEffect } from 'react';
 import proyecto2 from "../../assets/proyecto2.png";
 import servicio1 from "../../assets/servicio1.png";
 import fondoInicio from "../../assets/fondoInicio.png"
@@ -16,11 +16,14 @@ const Proyectos = () => {
     { imageUrl: proyecto2,url:"https://www.todofloral.com/" }
     // Agrega las URL de las imágenes restantes aquí
   ];
-
+  // useEffect(() => {
+  //   // Cuando se carga la página, desplázate a la sección de proyectos
+  //   window.location.hash = "#proyectos";
+  // }, []);
   return (
-    <div>
+    <div id="proyectos">
       {/* Título de la sección "Proyectos" */}
-      <Typography variant="h4" sx={{ display: "flex", justifyContent: "center", marginBottom: '2rem', marginTop: '80px' }}> {/* Ajusta marginBottom */}
+      <Typography  style={{ fontFamily: 'Playfair Display, serif' }} variant="h4" sx={{ display: "flex", justifyContent: "center", paddingBottom: '200px', paddingTop: '80px' }}> {/* Ajusta marginBottom */}
         Proyectos
       </Typography>
 
@@ -31,8 +34,8 @@ const Proyectos = () => {
             <a href={image.url}>
             <Box
               sx={{
-                width: "25rem",
-                height: "12.5rem",
+                width: "30rem",
+                height: "15rem",
                 borderRadius: "10px",
                 backgroundColor: 'rgba(30, 30, 30, 0.56)',
                 marginLeft: 'auto', // Elimina el margen izquierdo

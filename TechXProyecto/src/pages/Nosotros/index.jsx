@@ -38,13 +38,15 @@ const Nosotros = () => {
 
   return (
     <div>
+     <Box sx={{ backgroundColor: "#EFEFEF"}}> 
+
       {/* Título de la sección "Proyectos" */}
-      <Typography variant="h4" sx={{ display: "flex", justifyContent: "center",marginTop:"62px",marginBottom:"100px" }}>
+      <Typography  style={{ fontFamily: 'Playfair Display, serif' }} variant="h4" sx={{ display: "flex", justifyContent: "center",paddingTop:"62px",marginBottom:"100px" }}>
         Sobre Nosotros
       </Typography>
  
       {/* Carrusel de proyectos */}
-      <Carousel
+      <Carousel  
         autoPlay={false} // Desactiva la reproducción automática
         animation="slide" // Tipo de animación
         indicators={false} // Desactiva los indicadores de navegación
@@ -62,7 +64,8 @@ const Nosotros = () => {
         PrevIcon={<KeyboardArrowLeftIcon />} // Icono de flecha izquierda
       >
         {chunkedImages.map((chunk, index) => (
-          <Grid container key={index} justifyContent="center" spacing={10}>
+          <Grid        backgroundColor= "#EFEFEF"
+          container key={index} justifyContent="center" spacing={10}>
             {chunk.map((image, subIndex) => (
               <Grid item key={subIndex}>
                 <Box
@@ -89,10 +92,10 @@ const Nosotros = () => {
                     alt={`Miembro ${index * 3 + subIndex + 1}`}
                     style={{ width: '50%', height: '50%', objectFit: 'cover' }}
                   />
-                  <Typography fontSize="12px" sx={{ color: 'black', marginTop: '10px', fontWeight: 'bold' }}>
+                  <Typography fontSize="18px" sx={{ color: 'black', marginTop: '10px', fontWeight: 'bold' }}>
                     {image.profesion}
                   </Typography>
-                  <Typography fontSize="12px" sx={{ color: 'black', fontWeight: 'bold' }}>
+                  <Typography fontSize="18px" sx={{ color: 'black', fontWeight: 'bold' }}>
                     {image.nombre}
                   </Typography>
                 </Box>
@@ -100,7 +103,7 @@ const Nosotros = () => {
             ))}
           </Grid>
         ))}
-      </Carousel>      
+      </Carousel>        </Box>
     </div>
   );
 }

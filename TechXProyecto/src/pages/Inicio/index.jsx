@@ -1,30 +1,25 @@
 import React from 'react'
 import fondoInicio from "../../assets/fondoInicio.png"
 import { Box, Grid } from '@mui/material'
- import Proyectos from '../Proyectos';
+import Proyectos from '../Proyectos';
 import Servicios from '../Servicios';
-
-const Inicio = () => {
+import Landing from '../Landing';
+ const Inicio = () => {
+  
+ 
   return (
-    <div>
-{/* Inicio */}
-<Box sx={{backgroundColor:"#EFEFEF"
-}}> 
-      <Box sx={{
-        height:"100vh",
-        backgroundImage:`url(${fondoInicio})`,
-        backgroundRepeat:"no-repeat",
-         backgroundSize:"contain",
-          
+    <div> <Box sx={{
+      backgroundColor: "#EFEFEF"
+    }}>
+       <Landing />  
        
-      }}>
 
-      </Box>
-
- <Proyectos/>
- <Servicios/>
- </Box>
-
+       
+        <div id="proyectos">  
+            <Proyectos />  </div>
+            <div id="servicios">   <Servicios />  </div>
+   
+            </Box>
     </div>
   )
 }

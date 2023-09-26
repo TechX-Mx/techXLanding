@@ -13,12 +13,11 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { useState } from 'react';
 import logo from "../../assets/logo.png";
-import { Link } from 'react-router-dom'; // Importa Link desde React Router
-import "../../index.css";
 import { NavLink } from 'react-router-dom'; // Importa NavLink desde React Router
+import "../../index.css";
 
- const pages = ['Inicio', 'Proyectos', 'Servicios'  ];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = ['Inicio', 'Proyectos', 'Servicios'];
+const settings = ['Perfil', 'Cuenta', 'Panel de Control', 'Cerrar Sesión'];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -43,7 +42,7 @@ function Navbar() {
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
-              aria-label="account of current user"
+              aria-label="cuenta del usuario actual"
               aria-controls="menu-appbar"
               aria-haspopup="true"
               color="inherit"
@@ -70,22 +69,20 @@ function Navbar() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  {/* Utiliza Link para las páginas de navegación */}
-                  <NavLink to={page === 'Inicio' ? '/' : `/${page.toLowerCase()}`}>
-                    <Typography
-                       
-                        
-                    textAlign="center">{page}</Typography>
+                  {/* Utiliza NavLink para las páginas de navegación */}
+                  <NavLink to={page === 'Inicio' ? '/' : `/#${page.toLowerCase()}`}>
+                    <Typography  textAlign="center">
+                      {page}
+                    </Typography>
                   </NavLink>
                 </MenuItem>
               ))}
-                <MenuItem key="Sobre Nosotros" onClick={handleCloseNavMenu}>
+              <MenuItem key="Sobre Nosotros" onClick={handleCloseNavMenu}>
                 {/* Utiliza NavLink para la página "Sobre Nosotros" */}
-                <NavLink to="/nosotros">
-                  <Typography textAlign="center">Sobre Nosotros</Typography>
+                <NavLink  to="/nosotros">
+                  <Typography  textAlign="center">Sobre Nosotros</Typography>
                 </NavLink>
               </MenuItem>
-                 
             </Menu>
           </Box>
 
@@ -98,7 +95,7 @@ function Navbar() {
               mr: 2,
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
-              fontFamily: 'monospace',
+              fontFamily: 'Playfair Display, serif',
               fontWeight: 700,
               letterSpacing: '.3rem',
               color: 'inherit',
@@ -109,27 +106,28 @@ function Navbar() {
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
+            
             {pages.map((page) => (
-                <Button
+              <Button
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'black', display: 'block' }}
               >
                 {/* Utiliza NavLink para las páginas de navegación */}
-                <NavLink to={page === 'Inicio' ? '/' : `/${page.toLowerCase()}`}   style={{ textDecoration: 'none' }}>
-                  <Typography fontSize="24px" color="rgba(30, 30, 30, 1)" gutterBottom>
+                <NavLink to={page === 'Inicio' ? '/' : `/#${page.toLowerCase()}`} style={{ textDecoration: 'none',fontFamily: 'Playfair Display, serif'  }}>
+                  <Typography style={{ fontFamily: 'Playfair Display, serif' }} fontSize="24px" color="rgba(30, 30, 30, 1)" gutterBottom>
                     {page}
-                  </Typography>
+                  </Typography>  
                 </NavLink>
               </Button>
             ))}
-              <Button
+            <Button
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: 'black', display: 'block' }}
             >
               {/* Utiliza NavLink para la página "Sobre Nosotros" */}
               <NavLink to="/nosotros" style={{ textDecoration: 'none' }}>
-                <Typography fontSize="24px" color="rgba(30, 30, 30, 1)" gutterBottom>
+                <Typography style={{ fontFamily: 'Playfair Display, serif' }} fontSize="24px" color="rgba(30, 30, 30, 1)" gutterBottom>
                   Sobre Nosotros
                 </Typography>
               </NavLink>
@@ -137,7 +135,6 @@ function Navbar() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-         
             <Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"
@@ -159,7 +156,7 @@ function Navbar() {
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
-               <MenuItem onClick={handleCloseNavMenu}>
+              <MenuItem onClick={handleCloseNavMenu}>
                 {/* Utiliza NavLink para el enlace "Sobre Nosotros" */}
                 <NavLink to="/nosotros" style={{ textDecoration: 'none', color: 'inherit' }}>
                   <Typography textAlign="center">Sobre Nosotros</Typography>

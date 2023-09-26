@@ -1,5 +1,5 @@
 import { Box, Grid, Typography } from '@mui/material';
-import React from 'react';
+import React, { useEffect } from 'react';
 import servicio1 from "../../assets/servicio1.png";
 import servicio2 from "../../assets/servicio2.png";
 import servicio3 from "../../assets/servicio3.png";
@@ -25,16 +25,19 @@ const Servicios = () => {
     { imageUrl: servicio10, nombre: "MarketPlace" },
     // Agrega las URL de las imágenes restantes aquí
   ];
-
+  // useEffect(() => {
+  //   // Cuando se carga la página, desplázate a la sección de proyectos
+  //   window.location.hash = "#servicios";
+  // }, []);
   return (
-    <div>
+    <div id="servicios">
       {/* Título de la sección "Proyectos" */}
-      <Typography variant="h4" sx={{ display: "flex", justifyContent: "center" , marginBottom: '168px' , marginTop: '80px', }}>
+      <Typography   style={{ fontFamily: 'Playfair Display, serif' }} variant="h4" sx={{ display: "flex", justifyContent: "center" , marginBottom: '200px', marginTop: '80px' }}>
         Servicios
       </Typography>
 
       {/* Grid de proyectos */}
-      <Grid container spacing={0}  paddingLeft={25}  columns={{ xs: 15, sm: 8, md: 10, lg: 12 }}>
+      <Grid container spacing={0} paddingBottom= '200px'  paddingLeft={25}  columns={{ xs: 15, sm: 8, md: 10, lg: 12 }}>
         {projectImages.map((image, index) => (
           <Grid item xs={2} sm={6} md={4} lg={2.25} key={index} sx={{ marginBottom: '50px'  }}>
            <Box
@@ -54,14 +57,17 @@ const Servicios = () => {
               <img
                 src={image.imageUrl}
                 alt={`Proyecto ${index + 1}`}
-                style={{ width: '50%', height: 'auto', objectFit: 'cover' }}
+                style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
               />
-              <Typography sx={{ fontSize: "24px", flexWrap: 'wrap', textAlign: 'center' }}>{image.nombre}</Typography>
+              <Typography  style={{ fontFamily: 'Playfair Display, serif' }} 
+              sx={{ fontSize: "24px",    
+                  
+          textAlign: 'center' }}>{image.nombre}</Typography>
             </Box>
           </Grid>
         ))}
       </Grid>
-    </div>
+     </div>
   );
 }
 
