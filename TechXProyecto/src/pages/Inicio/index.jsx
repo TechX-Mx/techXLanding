@@ -4,22 +4,26 @@ import { Box, Grid } from '@mui/material'
 import Proyectos from '../Proyectos';
 import Servicios from '../Servicios';
 import Landing from '../Landing';
- const Inicio = () => {
-  
- 
+const Inicio = () => {
+
+
   return (
     <div> <Box sx={{
       backgroundColor: "#EFEFEF"
     }}>
-       <Landing />  
-       
 
-       
-        <div id="proyectos">  
-            <Proyectos />  </div>
-            <div id="servicios">   <Servicios />  </div>
-   
-            </Box>
+      <Landing />
+
+
+
+      {/* <div id="proyectos"> */}
+        <Proyectos />  
+        {/* </div> */}
+      {/* <div id="servicios">  */}
+        <Servicios />  
+        {/* </div> */}
+
+    </Box>
     </div>
   )
 }

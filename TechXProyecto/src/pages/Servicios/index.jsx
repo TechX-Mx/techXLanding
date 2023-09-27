@@ -10,6 +10,7 @@ import servicio7 from "../../assets/servicio7.png";
 import servicio8 from "../../assets/servicio8.png";
 import servicio9 from "../../assets/servicio9.png";
 import servicio10 from "../../assets/servicio10.png";
+import ab from "../../assets/ab.svg";
 
 const Servicios = () => {
   const projectImages = [
@@ -32,12 +33,12 @@ const Servicios = () => {
   return (
     <div id="servicios">
       {/* Título de la sección "Proyectos" */}
-      <Typography   style={{ fontFamily: 'Playfair Display, serif' }} variant="h4" sx={{ display: "flex", justifyContent: "center" , marginBottom: '200px', marginTop: '80px' }}>
+      <Typography   style={{ fontFamily: 'Playfair Display, serif' }} variant="h4" sx={{ display: "flex", justifyContent: "center" , paddingBottom: '100px', paddingTop: '100px' }}>
         Servicios
       </Typography>
 
       {/* Grid de proyectos */}
-      <Grid container spacing={0} paddingBottom= '200px'  paddingLeft={25}  columns={{ xs: 15, sm: 8, md: 10, lg: 12 }}>
+      <Grid container spacing={0} paddingBottom= '100px'  paddingLeft={25}  columns={{ xs: 15, sm: 8, md: 10, lg: 12 }}>
         {projectImages.map((image, index) => (
           <Grid item xs={2} sm={6} md={4} lg={2.25} key={index} sx={{ marginBottom: '50px'  }}>
            <Box
@@ -48,10 +49,7 @@ const Servicios = () => {
                 flexDirection: 'column',
                 alignItems: 'center', // Centrar contenido verticalmente
                 transition: 'transform 0.3s',
-                '&:hover': {
-                   opacity: [0.9, 0.8, 0.7],
-                  transform: 'scale(1.1)',
-                },
+                 
               }}
             >
               <img
