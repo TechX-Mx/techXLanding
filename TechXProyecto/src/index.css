@@ -1,8 +1,8 @@
 @font-face {
   font-family: 'Playfair Display', serif;
-  src: url('./assets/fonts/PlayfairDisplay-Italic.ttf') format('truetype');
+  src: url('./assets/fonts/PlayfairDisplay-Medium.ttf') format('truetype');
     
-  font-style: normal;
+  /* font-style: normal; */
   font-weight: 700;
    
 }

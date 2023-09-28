@@ -8,10 +8,10 @@ const Footer = () => {
   return (
     <div>
       <Box sx={{
-        height: "32vh",
+        height: "30vh",
         backgroundColor: "#1E1E1E",
         color: "white",
-        paddingTop: "20px",
+        paddingTop: "10px",
         paddingLeft: "20px",
         display: "flex",
         flexDirection: "column",
@@ -19,21 +19,21 @@ const Footer = () => {
                 alignItems: "flex-end", // Alinea los elementos al final
 
       }}>
-        <Grid container rowSpacing={2} columnSpacing={4} > {/* Establece el mismo valor para rowSpacing y columnSpacing */}
+        <Grid container rowSpacing={1.5} columnSpacing={0} > {/* Establece el mismo valor para rowSpacing y columnSpacing */}
           <Grid item xs={5.9}  sx={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}>
-            <img src={icono1} alt="Logo" style={{ width: "30px", height: "30px" }} />
+            <img src={icono1} alt="Logo" style={{ width: "20.97px", height: "20.97px" }} />
           </Grid>
           <Grid item xs={5.9}  sx={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
             <Typography style={{ fontFamily: 'Playfair Display, serif', fontSize: "48px" }}> TechX </Typography>
           </Grid>
           <Grid item xs={5.9} sx={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}>
-            <img src={icono2} alt="Logo" style={{ width: "30px", height: "30px" }} />
+            <img src={icono2} alt="Logo" style={{ width: "20.97px", height: "20.97px" }} />
           </Grid>
           <Grid item xs={5.9} sx={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
             <Typography style={{ fontFamily: 'Playfair Display, serif', fontSize: "16px" }}> Todos Los derechos Reservados © </Typography>
           </Grid>
           <Grid item xs={5.9} sx={{ display: 'flex',justifyContent: 'flex-start', alignItems: 'center',marginTop:"20px" }}>
-            <img src={icono3} alt="Logo" style={{ width: "30px", height: "30px" }} />
+            <img src={icono3} alt="Logo" style={{ width: "20.97px", height: "20.97px" }} />
           </Grid>
           <Grid item xs={5.9} sx={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
             <Typography style={{ fontFamily: 'Playfair Display, serif', fontSize: "16px" }}> Hermosillo, Sonora, Mexico </Typography>

@@ -23,19 +23,19 @@ const Proyectos = () => {
   return (
     <div id="proyectos">
     {/* Título de la sección "Proyectos" */}
-    <Typography style={{ fontFamily: 'Playfair Display, serif' }} variant="h4" sx={{ display: "flex", justifyContent: "center", paddingBottom: "100px", paddingTop: '0px' }}>
+    <Typography style={{ fontFamily: 'Playfair Display, serif' }} sx={{ display: "flex", justifyContent: "center", paddingBottom: "100px", paddingTop: '0px',fontSize:"45px" }}>
       Proyectos
     </Typography>
 
     {/* Grid de proyectos */}
-    <Grid container rowSpacing={1} columnSpacing={1}>
+    <Grid container rowSpacing={0.5} columnSpacing={5}>
       {projectImages.map((image, index) => (
-        <Grid item xs={12} sm={6} md={4} key={index}>
+        <Grid item xs={12} sm={6} md={3.6} key={index}>
           <a href={image.url} target="_blank" rel="noopener noreferrer">
             <Box
               sx={{
-                width: "calc(100% - 136px)", // 100% - 68px izquierda - 68px derecha
-                height: "11rem",
+                width: "382.52px", // 100% - 68px izquierda - 68px derecha
+                height: "239.16px",
                 borderRadius: "10px",
                 backgroundColor: 'rgba(30, 30, 30, 0.56)',
                 marginLeft: '68px',

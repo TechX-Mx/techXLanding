@@ -7,37 +7,49 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { useState } from 'react';
-import logo from "../../assets/logo.png";
-import { NavLink } from 'react-router-dom'; // Importa NavLink desde React Router
-import "../../index.css";
+import logo from '../../assets/logo.png';
+import { Link as ScrollLink } from 'react-scroll';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 
-const pages = ['Inicio', 'Proyectos', 'Servicios'];
+const sections = ['#servicios', '#proyectos'];
+const pages = ['Inicio', 'Servicios', 'Proyectos'];
 const settings = ['Perfil', 'Cuenta', 'Panel de Control', 'Cerrar Sesión'];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
+
+    if (location.pathname === '/nosotros') {
+      navigate('/');
+    }
   };
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
 
+  const handleInicioClick = () => {
+    navigate('/');
+    handleCloseNavMenu();
+  };
+
   return (
-    <AppBar position="static" style={{ backgroundColor: 'white', height: '143px' }}>
+    <AppBar position="static" style={{ backgroundColor: '#FFF', height: '100px' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <NavLink to="/"> {/* Utiliza Link para la página de inicio */}
-            <img src={logo} alt="Logo" style={{ width: "150px", height: '137px', marginLeft: '68px' }} />
-          </NavLink>
+          <ScrollLink to="inicio" spy={true} smooth={true} offset={-100} duration={500}>
+            <Box sx={{ paddingLeft: '28px' }}>
+              <img src={logo} alt="Logo" style={{ width: '110px', height: '100px' }} />
+            </Box>
+          </ScrollLink>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -45,7 +57,7 @@ function Navbar() {
               aria-label="cuenta del usuario actual"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-              color="inherit"
+              color="primary"
             >
               <MenuIcon />
             </IconButton>
@@ -67,21 +79,52 @@ function Navbar() {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  {/* Utiliza NavLink para las páginas de navegación */}
-                  <NavLink to={page === 'Inicio' ? '/' : `/#${page.toLowerCase()}`}>
-                    <Typography  textAlign="center">
-                      {page}
-                    </Typography>
-                  </NavLink>
-                </MenuItem>
-              ))}
+              {pages.map((page) => {
+                const formattedPage = page.charAt(0).toUpperCase() + page.slice(1).toLowerCase();
+
+                return (
+                  <MenuItem key={page} onClick={handleCloseNavMenu}>
+                    {page === 'Servicios' || page === 'Proyectos' ? (
+                      <ScrollLink
+                        to={page.toLowerCase()}
+                        spy={true}
+                        smooth={true}
+                        offset={-100}
+                        duration={500}
+                        style={{
+                          textDecoration: 'none',
+                          fontFamily: 'Playfair Display, serif',
+                          fontWeight: 'bold',
+                          cursor: 'pointer',
+                        }}
+                      >
+                        {formattedPage}
+                      </ScrollLink>
+                    ) : (
+                      <Typography style={{ fontFamily: 'Playfair Display, serif'  }} textAlign="center">
+                        {formattedPage}
+                      </Typography>
+                    )}
+                  </MenuItem>
+                );
+              })}
+
               <MenuItem key="Sobre Nosotros" onClick={handleCloseNavMenu}>
-                {/* Utiliza NavLink para la página "Sobre Nosotros" */}
-                <NavLink  to="/nosotros">
-                  <Typography  textAlign="center">Sobre Nosotros</Typography>
-                </NavLink>
+                <ScrollLink
+                  to="nosotros"
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={500}
+                  style={{
+                    textDecoration: 'none',
+                    fontFamily: 'Playfair Display, serif',
+                    fontWeight: 'bold',
+                    cursor: 'pointer',
+                  }}
+                >
+                  Sobre Nosotros
+                </ScrollLink>
               </MenuItem>
             </Menu>
           </Box>
@@ -90,7 +133,7 @@ function Navbar() {
             variant="h5"
             noWrap
             component="a"
-            href="/"
+            onClick={handleInicioClick}
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -99,35 +142,66 @@ function Navbar() {
               fontWeight: 700,
               letterSpacing: '.3rem',
               color: 'inherit',
-              textDecoration: 'none',
+              textDecoration: 'pointer',
             }}
           >
             LOGO
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
-            
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'black', display: 'block' }}
-              >
-                {/* Utiliza NavLink para las páginas de navegación */}
-                <NavLink to={page === 'Inicio' ? '/' : `/#${page.toLowerCase()}`} style={{ textDecoration: 'none',fontFamily: 'Playfair Display, serif'  }}>
-                  <Typography style={{ fontFamily: 'Playfair Display, serif' }} fontSize="24px" color="rgba(30, 30, 30, 1)" gutterBottom>
-                    {page}
-                  </Typography>  
-                </NavLink>
-              </Button>
-            ))}
+            {pages.map((page) => {
+              const formattedPage = page.charAt(0).toUpperCase() + page.slice(1).toLowerCase();
+
+              return (
+                <Button
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    my: 2,
+                    color: 'black',
+                    display: 'block',
+                    textTransform: 'none', // Evita la transformación de texto a minúsculas
+                    fontFamily: 'Playfair Display, serif',
+                    fontWeight: 'bold',
+                  }}
+                >
+                  {page === 'Servicios' || page === 'Proyectos' ? (
+                    <ScrollLink
+                      to={page.toLowerCase()}
+                      spy={true}
+                      smooth={true}
+                      offset={-100}
+                      duration={500}
+                      style={{
+                        textDecoration: 'none',fontSize:"16px"
+                      }}
+                    >
+                      {formattedPage}
+                    </ScrollLink>
+                  ) : (
+                    <ScrollLink
+                      to={page.toLowerCase()}
+                      spy={true}
+                      smooth={true}
+                      offset={-100}
+                      duration={500}
+                      style={{
+                        textDecoration: 'none',
+                        fontSize:"16px"
+                      }}
+                    >
+                      {formattedPage}
+                    </ScrollLink>
+                  )}
+                </Button>
+              );
+            })}
             <Button
               onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: 'black', display: 'block' }}
+              sx={{ my: 2, color: 'black', display: 'block', textTransform: 'none' }}
             >
-              {/* Utiliza NavLink para la página "Sobre Nosotros" */}
               <NavLink to="/nosotros" style={{ textDecoration: 'none' }}>
-                <Typography style={{ fontFamily: 'Playfair Display, serif' }} fontSize="24px" color="rgba(30, 30, 30, 1)" gutterBottom>
+                <Typography style={{ fontFamily: 'Playfair Display, serif' }} fontSize="16px" paddingTop="3px" color="rgba(30, 30, 30, 1)" gutterBottom>
                   Sobre Nosotros
                 </Typography>
               </NavLink>
@@ -156,8 +230,7 @@ function Navbar() {
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
-              <MenuItem onClick={handleCloseNavMenu}>
-                {/* Utiliza NavLink para el enlace "Sobre Nosotros" */}
+              <MenuItem>
                 <NavLink to="/nosotros" style={{ textDecoration: 'none', color: 'inherit' }}>
                   <Typography textAlign="center">Sobre Nosotros</Typography>
                 </NavLink>

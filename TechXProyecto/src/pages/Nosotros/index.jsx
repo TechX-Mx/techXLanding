@@ -14,8 +14,7 @@ import miembro7 from "../../assets/miembro7.png";
 import miembro8 from "../../assets/miembro8.png";
 import miembro9 from "../../assets/miembro9.png";
 import miembro10 from "../../assets/miembro10.png";
-
-const Nosotros = () => {
+ const Nosotros = () => {
   const projectImages = [
     { imageUrl: miembro1, profesion: "CEO", nombre: "Mario Eduardo Diaz" },
     { imageUrl: miembro2, profesion: "QA and Fullstack Developer", nombre: "Luis Luna" },
