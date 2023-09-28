@@ -103,7 +103,7 @@ import miembro10 from "../../assets/miembro10.png";
                     <img
                       src={image.imageUrl}
                       alt={`Miembro ${index * chunkSize + subIndex + 1}`}
-                      style={{ width: '50%', height: '50%', objectFit: 'cover' }}
+                      style={{ width: '202.8px', height: '206.99px' }}
                     />
                     <Typography fontSize="18px" sx={{ color: 'black', marginTop: '10px', fontWeight: 'bold' }}>
                       {image.profesion}

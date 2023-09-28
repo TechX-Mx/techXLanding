@@ -42,11 +42,12 @@ const Proyectos = () => {
                 marginRight: '68px',
                 marginBottom: '2rem',
                 transition: 'transform 0.3s',
-
+               
                 '&:hover': {
                   backgroundColor: 'primary.main',
                   opacity: [0.9, 0.8, 0.7],
                   transform: 'scale(1.1)',
+                  
                 }
               }}
             >

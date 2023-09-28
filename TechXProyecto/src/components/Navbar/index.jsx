@@ -15,7 +15,7 @@ import { Link as ScrollLink } from 'react-scroll';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 
 const sections = ['#servicios', '#proyectos'];
-const pages = ['Inicio', 'Servicios', 'Proyectos'];
+const pages = ['Inicio', 'Proyectos', 'Servicios'];
 const settings = ['Perfil', 'Cuenta', 'Panel de Control', 'Cerrar Sesión'];
 
 function Navbar() {
