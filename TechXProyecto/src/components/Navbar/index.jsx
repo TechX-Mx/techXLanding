@@ -45,11 +45,11 @@ function Navbar() {
     <AppBar position="static" style={{ backgroundColor: '#FFF', height: '100px' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <ScrollLink to="inicio" spy={true} smooth={true} offset={-100} duration={500}>
-            <Box sx={{ paddingLeft: '28px' }}>
-              <img src={logo} alt="Logo" style={{ width: '110px', height: '100px' }} />
-            </Box>
-          </ScrollLink>
+        <a href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+  <Box sx={{ paddingLeft: '28px' }}>
+    <img src={logo} alt="Logo" style={{ width: '110px', height: '100px', cursor: 'pointer' }} />
+  </Box>
+</a>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -89,8 +89,8 @@ function Navbar() {
                         to={page.toLowerCase()}
                         spy={true}
                         smooth={true}
-                        offset={-100}
-                        duration={500}
+                        offset={0}
+                        duration={10}
                         style={{
                           textDecoration: 'none',
                           fontFamily: 'Playfair Display, serif',
@@ -114,8 +114,8 @@ function Navbar() {
                   to="nosotros"
                   spy={true}
                   smooth={true}
-                  offset={-100}
-                  duration={500}
+                  offset={0}
+                  duration={10}
                   style={{
                     textDecoration: 'none',
                     fontFamily: 'Playfair Display, serif',
@@ -170,8 +170,8 @@ function Navbar() {
                       to={page.toLowerCase()}
                       spy={true}
                       smooth={true}
-                      offset={-100}
-                      duration={500}
+                      offset={0}
+                      duration={10}
                       style={{
                         textDecoration: 'none',fontSize:"16px"
                       }}
@@ -183,8 +183,8 @@ function Navbar() {
                       to={page.toLowerCase()}
                       spy={true}
                       smooth={true}
-                      offset={-100}
-                      duration={500}
+                      offset={0}
+                      duration={10}
                       style={{
                         textDecoration: 'none',
                         fontSize:"16px"
