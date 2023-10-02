@@ -36,7 +36,7 @@ const Servicios = () => {
       </Typography>
 
       {/* Grid de proyectos */}
-      <Grid container justifyContent="center"   rowSpacing={15} paddingBottom='100px' paddingLeft={15} columns={{ xs: 15, sm: 8, md: 10, lg: 13.1 }}>
+      <Grid container justifyContent="center"   columnSpacing={0} rowSpacing={5} paddingBottom='100px' paddingRight={20} paddingLeft={25} columns={{ xs: 15, sm: 8, md: 10, lg: 14.9 }}>
         {projectImages.map((image, index) => (
           <Grid item xs={2} sm={6} md={4} lg={2.5} key={index} sx={{ marginBottom: '50px' }}>
             <Box

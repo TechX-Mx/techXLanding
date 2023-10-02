@@ -46,7 +46,7 @@ const Proyectos = () => {
                 '&:hover': {
                   backgroundColor: 'primary.main',
                   opacity: [0.9, 0.8, 0.7],
-                  transform: 'scale(1.1) rotate(360deg)', // Agrega la rotación aquí
+                  transform: 'scale(1.1)',  
                 }
               }}
             >
