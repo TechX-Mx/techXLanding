@@ -1,6 +1,6 @@
 import React from 'react'
 import fondoInicio from "../../assets/fondoInicio.png"
-import { Box, Grid } from '@mui/material'
+import { Box, Grid, Typography } from '@mui/material'
 import Proyectos from '../Proyectos';
 import Servicios from '../Servicios';
 import Landing from '../Landing';
@@ -14,7 +14,7 @@ const Inicio = () => {
 
       <Landing />
 
-
+      
 
       {/* <div id="proyectos"> */}
         <Proyectos />  

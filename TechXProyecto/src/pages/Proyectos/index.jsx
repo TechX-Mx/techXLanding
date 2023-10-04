@@ -23,7 +23,7 @@ const Proyectos = () => {
   return (
     <div id="proyectos">
     {/* Título de la sección "Proyectos" */}
-    <Typography style={{ fontFamily: 'Playfair Display, serif' }} sx={{ display: "flex", justifyContent: "center", paddingBottom: "100px", paddingTop: '0px',fontSize:"45px" }}>
+    <Typography style={{ fontFamily: 'Playfair Display, serif' }} sx={{ display: "flex", justifyContent: "center", paddingBottom: "100px", marginTop: '-115px',fontSize:"45px" }}>
       Proyectos
     </Typography>
 

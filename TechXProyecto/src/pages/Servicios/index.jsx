@@ -29,14 +29,14 @@ const Servicios = () => {
   ];
 
   return (
-    <div id="servicios">
+    <div id="servicios"  >
       {/* Título de la sección "Proyectos" */}
-      <Typography style={{ fontFamily: 'Playfair Display, serif'    }}  sx={{ display: "flex", justifyContent: "center", paddingBottom: '100px', paddingTop: '100px',fontSize:"44px" }}>
+      <Typography style={{ fontFamily: 'Playfair Display, serif'    }}  sx={{ display: "flex", justifyContent: "center", paddingBottom: '100px',  fontSize:"44px" }}>
         Servicios
       </Typography>
 
       {/* Grid de proyectos */}
-      <Grid container justifyContent="center"   columnSpacing={0} rowSpacing={5} paddingBottom='100px' paddingRight={20} paddingLeft={25} columns={{ xs: 15, sm: 8, md: 10, lg: 14.9 }}>
+      <Grid container justifyContent="center"  columnSpacing={0} rowSpacing={5} paddingBottom='100px' paddingRight={20} paddingLeft={25} columns={{ xs: 15, sm: 8, md: 10, lg: 14.9 }}>
         {projectImages.map((image, index) => (
           <Grid item xs={2} sm={6} md={4} lg={2.5} key={index} sx={{ marginBottom: '50px' }}>
             <Box
