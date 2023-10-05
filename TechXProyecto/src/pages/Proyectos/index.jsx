@@ -1,8 +1,10 @@
-import { Box, Grid, Link, Typography } from '@mui/material';
+import { Box, Dialog, DialogActions, DialogContent, Grid, Link, TextField, Typography } from '@mui/material';
 import React, { useEffect } from 'react';
 import proyecto2 from "../../assets/proyecto2.png";
 import servicio1 from "../../assets/servicio1.png";
 import fondoInicio from "../../assets/fondoInicio.png"
+import { useState } from 'react';
+import Form from './form';
 
 const Proyectos = () => {
   const projectImages = [
@@ -20,7 +22,16 @@ const Proyectos = () => {
   //   // Cuando se carga la página, desplázate a la sección de proyectos
   //   window.location.hash = "#proyectos";
   // }, []);
-  return (
+  const [open, setOpen] = useState(false)
+
+  const handleOpen = () => {
+    setOpen(true)
+}
+
+const handleClose = () => {
+    setOpen(false)
+}
+    return (
     <div id="proyectos">
     {/* Título de la sección "Proyectos" */}
     <Typography style={{ fontFamily: 'Playfair Display, serif' }} sx={{ display: "flex", justifyContent: "center", paddingBottom: "100px", marginTop: '-115px',fontSize:"45px" }}>
@@ -28,10 +39,12 @@ const Proyectos = () => {
     </Typography>
 
     {/* Grid de proyectos */}
-    <Grid container rowSpacing={0.5} columnSpacing={5}>
+    <Grid container rowSpacing={5.5} columnSpacing={5}>
       {projectImages.map((image, index) => (
         <Grid item xs={12} sm={6} md={3.6} key={index}>
-          <a href={image.url} target="_blank" rel="noopener noreferrer">
+          {/* <a href={image.url} target="_blank" rel="noopener noreferrer"> */}
+          <Typography style={{ fontFamily: 'Playfair Display, serif' }} sx={{marginLeft:"138px" ,display:"flex",justifyContent: "center" ,color:"magenta"}}>Todo Floral</Typography>
+
             <Box
               sx={{
                 width: "382.52px", // 100% - 68px izquierda - 68px derecha
@@ -43,20 +56,24 @@ const Proyectos = () => {
                 marginBottom: '2rem',
                 transition: 'transform 0.3s',
                
-                '&:hover': {
-                  backgroundColor: 'primary.main',
-                  opacity: [0.9, 0.8, 0.7],
-                  transform: 'scale(1.1)',  
-                }
+                // '&:hover': {
+                //   backgroundColor: 'primary.main',
+                //   opacity: [0.9, 0.8, 0.7],
+                //   transform: 'scale(1.1)',  
+                // }
               }}
             >
-              <img
+ 
+               <img
                 src={image.imageUrl}
                 alt={`Proyecto ${index + 1}`}
                 style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: "10px" }}
               />
-            </Box>
-          </a>
+               <Form imageUrl={image.imageUrl}  url={image.url} />  
+             </Box>
+          {/* </a>  */}
+          
+
         </Grid>
       ))}
     </Grid>

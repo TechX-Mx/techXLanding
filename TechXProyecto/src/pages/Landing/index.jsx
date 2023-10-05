@@ -15,16 +15,23 @@ const Landing = () => {
     <div>
       {/* Inicio */}
       <Box
-        className="background-image"
         sx={{
           height: '100vh',
+          backgroundColor:"white",
           backgroundImage: `url(${fondoInicio})`,
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'contain',
+          // Aplica la clase CSS de animación a la imagen de fondo
+          '&.bg-pan-bl': {
+            WebkitAnimation: "bg-pan-tr 8s both infinite",
+                    animation: "bg-pan-tr 8s both infinite",
+          }
         }}
-      >
+        className="bg-pan-tr"
+        // Aplica la clase CSS de animación al div que contiene la imagen de fondo
+       >
 
-        <Typography
+        {/* <Typography
           style={{ fontFamily: 'Playfair Display, serif' }}
           variant="h1"
           sx={{
@@ -46,8 +53,32 @@ const Landing = () => {
             <span>h</span>
             <span>X</span>
           </Bounce>
+        </Typography> */}
+  <Typography className="track"
+           style={{ fontFamily: 'Playfair Display, serif' }}
+          variant="h1"
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            paddingTop: '62px',
+            marginBottom: '100px',
+            overflow: 'hidden',
+          }}
+        >
+          TechX
         </Typography>
-
+        <Typography className="track2"
+           style={{ fontFamily: 'Playfair Display, serif' }}
+          variant="h4"
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            paddingTop: '2px',
+             overflow: 'hidden',
+          }}
+        >
+          Empresa de Desarrollo de Software
+        </Typography>
       </Box>
     </div>
   );

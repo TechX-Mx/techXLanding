@@ -1,5 +1,5 @@
 import { Box, Grid, Typography } from '@mui/material';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import gif1 from "../../assets/gif1.gif";
 import gif2 from "../../assets/gif2.gif";
 import gif3 from "../../assets/gif3.gif";
@@ -10,9 +10,11 @@ import gif7 from "../../assets/gif7.gif";
 import gif8 from "../../assets/gif8.gif";
 import gif9 from "../../assets/gif9.gif";
 import gif10 from "../../assets/gif10.gif";
-import ab from "../../assets/ab.svg";
+import js2 from "../../assets/js3.png";
 import icono from "../../assets/icono.png";
-
+import Carousel from 'react-material-ui-carousel';
+import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 const Servicios = () => {
   const projectImages = [
     { imageUrl: gif10, nombre: "Paginas Web" },
@@ -27,6 +29,32 @@ const Servicios = () => {
     { imageUrl: gif9, nombre: "MarketPlace" },
     // Agrega las URL de las imágenes restantes aquí
   ];
+  const chunkSize = 3;
+  const [currentChunk, setCurrentChunk] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Avanzar al siguiente grupo de imágenes
+      setCurrentChunk((prevChunk) => (prevChunk + 1) % Math.ceil(projectImages.length / chunkSize));
+    }, 3000); // Cambiar cada 3 segundos
+
+    return () => {
+      // Limpia el intervalo cuando el componente se desmonta
+      clearInterval(interval);
+    };
+  }, []);
+
+  const chunkedImages = projectImages.reduce((resultArray, item, index) => {
+    const chunkIndex = Math.floor(index / chunkSize);
+
+    if (!resultArray[chunkIndex]) {
+      resultArray[chunkIndex] = [];
+    }
+
+    resultArray[chunkIndex].push(item);
+
+    return resultArray;
+  }, []);
 
   return (
     <div id="servicios"  >
@@ -60,10 +88,67 @@ const Servicios = () => {
                   fontSize: "17px",
                   textAlign: 'center',
                 }}>{image.nombre}</Typography>
+                
             </Box>
           </Grid>
         ))}
       </Grid>
+      <Carousel
+          autoPlay={false}
+          animation="slide"
+          indicators={false}
+          navButtonsAlwaysVisible
+          navButtonsProps={{
+            style: {
+              backgroundColor: 'rgba(0, 0, 0, 0.3)',
+              borderRadius: '50%',
+              color: 'white',
+              marginTop: "-200px"
+            },
+          }}
+          NextIcon={<KeyboardArrowRightIcon />}
+          PrevIcon={<KeyboardArrowLeftIcon />}
+          index={currentChunk}
+        >
+          {chunkedImages.map((chunk, index) => (
+            <Grid backgroundColor="#EFEFEF" container key={index} justifyContent="center" spacing={10}>
+              {chunk.map((image, subIndex) => (
+                <Grid item key={subIndex}>
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      textAlign: 'center',
+                      width: "300px",
+                      height: "300px",
+                      borderRadius: "50%",
+                      transition: 'transform 0.3s',
+                      '&:hover': {
+                        opacity: [0.9, 0.8, 0.7],
+                        transform: 'scale(1.1)',
+                      },
+                      marginLeft: '10px',
+                    }}
+                  >
+                    <img
+                      src={js2}
+                      alt={`Miembro ${index * chunkSize + subIndex + 1}`}
+                      style={{ width: '45%', height: '45%',borderRadius:"50%" }}
+                    />
+                    <Typography fontSize="18px" sx={{ color: 'black', marginTop: '10px', fontWeight: 'bold' }}>
+                      JavaScript
+                    </Typography>
+                    <Typography fontSize="18px" sx={{ color: 'black', fontWeight: 'bold' }}>
+                      {image.nombre}
+                    </Typography>
+                  </Box>
+                </Grid>
+              ))}
+            </Grid>
+          ))}
+        </Carousel>
+
     </div>
   );
 }
