@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from '@mui/material';
+import { Box,  Divider,  Grid, List, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import gif1 from "../../assets/gif1.gif";
 import gif2 from "../../assets/gif2.gif";
@@ -10,6 +10,14 @@ import gif7 from "../../assets/gif7.gif";
 import gif8 from "../../assets/gif8.gif";
 import gif9 from "../../assets/gif9.gif";
 import gif10 from "../../assets/gif10.gif";
+import tecno1 from "../../assets/tecno1.png";
+import tecno2 from "../../assets/tecno2.png";
+import tecno3 from "../../assets/tecno3.png";
+import tecno4 from "../../assets/tecno4.png";
+import tecno5 from "../../assets/tecno5.png";
+import tecno6 from "../../assets/tecno6.png";
+ import { styled } from '@mui/material/styles';
+ 
 import js2 from "../../assets/js3.png";
 import icono from "../../assets/icono.png";
 import Carousel from 'react-material-ui-carousel';
@@ -29,7 +37,32 @@ const Servicios = () => {
     { imageUrl: gif9, nombre: "MarketPlace" },
     // Agrega las URL de las imágenes restantes aquí
   ];
+  const projectImages2 = [
+    { imageUrl: tecno1, nombre: "HTML" },
+    { imageUrl: tecno2, nombre: "CSS" },
+    { imageUrl: tecno3, nombre: "REACT JS" },
+    { imageUrl: tecno4, nombre: "NODE JS" },
+    { imageUrl: tecno5, nombre: "EXPRESS" },
+    { imageUrl: tecno6, nombre: "MUI" },
+    
+    // Agrega las URL de las imágenes restantes aquí
+  ];
+   
+
+
+
   const chunkSize = 3;
+  const chunkedImages2 = projectImages2.reduce((resultArray, item, index) => {
+    const chunkIndex2 = Math.floor(index / chunkSize);
+
+    if (!resultArray[chunkIndex2]) {
+      resultArray[chunkIndex2] = [];
+    }
+
+    resultArray[chunkIndex2].push(item);
+
+    return resultArray;
+  }, []);
   const [currentChunk, setCurrentChunk] = useState(0);
 
   useEffect(() => {
@@ -55,7 +88,10 @@ const Servicios = () => {
 
     return resultArray;
   }, []);
-
+  const style = {
+    width: '100%',
+    maxWidth: 360,
+   };
   return (
     <div id="servicios"  >
       {/* Título de la sección "Proyectos" */}
@@ -64,7 +100,7 @@ const Servicios = () => {
       </Typography>
 
       {/* Grid de proyectos */}
-      <Grid container justifyContent="center"  columnSpacing={0} rowSpacing={5} paddingBottom='100px' paddingRight={20} paddingLeft={25} columns={{ xs: 15, sm: 8, md: 10, lg: 14.9 }}>
+      <Grid container justifyContent="center"  columnSpacing={0} rowSpacing={20} paddingBottom='200px' paddingRight={20} paddingLeft={25} columns={{ xs: 15, sm: 8, md: 10, lg: 14.9 }}>
         {projectImages.map((image, index) => (
           <Grid item xs={2} sm={6} md={4} lg={2.5} key={index} sx={{ marginBottom: '50px' }}>
             <Box
@@ -88,11 +124,23 @@ const Servicios = () => {
                   fontSize: "17px",
                   textAlign: 'center',
                 }}>{image.nombre}</Typography>
-                
+                 <List sx={style} component="nav" aria-label="mailbox folders"> 
+                <Divider /></List>
+                <Typography style={{ fontFamily: 'Playfair Display, serif' }}
+                sx={{
+                  fontSize: "10px",
+                  textAlign: 'center',
+                }}>Lorem ipsum dolor sit amet, consectetur adipis icing elit, sed do eiusmod tempor incid dunt utlab ore et dolore magna aliqua. Ut enim ad minim veniam weay in the sun.</Typography>
+ 
+
             </Box>
           </Grid>
         ))}
       </Grid>
+
+
+
+
       <Carousel
           autoPlay={false}
           animation="slide"
@@ -110,7 +158,7 @@ const Servicios = () => {
           PrevIcon={<KeyboardArrowLeftIcon />}
           index={currentChunk}
         >
-          {chunkedImages.map((chunk, index) => (
+          {chunkedImages2.map((chunk, index) => (
             <Grid backgroundColor="#EFEFEF" container key={index} justifyContent="center" spacing={10}>
               {chunk.map((image, subIndex) => (
                 <Grid item key={subIndex}>
@@ -132,13 +180,11 @@ const Servicios = () => {
                     }}
                   >
                     <img
-                      src={js2}
+                      src={image.imageUrl}
                       alt={`Miembro ${index * chunkSize + subIndex + 1}`}
                       style={{ width: '45%', height: '45%',borderRadius:"50%" }}
                     />
-                    <Typography fontSize="18px" sx={{ color: 'black', marginTop: '10px', fontWeight: 'bold' }}>
-                      JavaScript
-                    </Typography>
+                    
                     <Typography fontSize="18px" sx={{ color: 'black', fontWeight: 'bold' }}>
                       {image.nombre}
                     </Typography>

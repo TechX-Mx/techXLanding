@@ -34,7 +34,7 @@ const handleClose = () => {
     return (
     <div id="proyectos">
     {/* Título de la sección "Proyectos" */}
-    <Typography style={{ fontFamily: 'Playfair Display, serif' }} sx={{ display: "flex", justifyContent: "center", paddingBottom: "100px", marginTop: '-115px',fontSize:"45px" }}>
+    <Typography style={{ fontFamily: 'Playfair Display, serif' }} sx={{ display: "flex", justifyContent: "center", paddingBottom: "100px", marginTop: '105px',fontSize:"45px" }}>
       Proyectos
     </Typography>
 
