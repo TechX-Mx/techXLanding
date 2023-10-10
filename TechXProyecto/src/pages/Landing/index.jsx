@@ -6,6 +6,7 @@ import { Bounce, Slide } from "react-awesome-reveal";
 import about1 from '../../assets/about1.jpg';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
+import celular from '../../assets/celular.png';
 
 const Landing = () => {
   const [showText, setShowText] = useState(false);
@@ -73,7 +74,7 @@ const Landing = () => {
             overflow: 'hidden',
           }}
         >
-          TechX
+          Innovacion Tecnologica
         </Typography>
         <Typography className="track2"
            style={{ fontFamily: 'Playfair Display, serif' }}
@@ -85,7 +86,8 @@ const Landing = () => {
              overflow: 'hidden',
           }}
         >
-          Empresa de Desarrollo de Software
+          Empresa de Desarrollo de Software creando
+           soluciones basadas en tecnologia y consultoria.
         </Typography>
       </Box>
       <Box>
@@ -132,7 +134,7 @@ const Landing = () => {
   </Item>   
   </Grid>
   <Grid item xs={6} display="flex" flexDirection="row" justifyContent="center" paddingTop="100px">
-         <Item><img src={about1}
+         <Item><img src={celular}
           // alt={`Proyecto ${index + 1}`}
           style={{ width: '70%', height: '70%', objectFit: 'cover', borderRadius: "10px" }}
         /></Item>

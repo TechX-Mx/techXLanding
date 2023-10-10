@@ -42,7 +42,7 @@ function Navbar() {
   };
 
   return (
-    <AppBar position="static" style={{ backgroundColor: '#A2AFB6', height: '100px' }}>
+    <AppBar position="static" style={{ backgroundColor: 'white', height: '100px' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
         <a href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
