@@ -58,8 +58,8 @@ import miembro10 from "../../assets/miembro10.png";
 
   return (
     <div>
-      <Box sx={{ backgroundColor: "#EFEFEF" }}>
-        <Typography style={{ fontFamily: 'Playfair Display, serif' }} variant="h4" sx={{ display: "flex", justifyContent: "center", paddingTop: "62px", marginBottom: "100px" }}>
+      <Box sx={{ backgroundColor: "white" }}>
+        <Typography style={{ fontFamily: "'Oswald', sans-serif" }} variant="h4" sx={{ display: "flex", justifyContent: "center", paddingTop: "62px", marginBottom: "100px" }}>
           Sobre Nosotros
         </Typography>
         <Carousel
@@ -80,7 +80,7 @@ import miembro10 from "../../assets/miembro10.png";
           index={currentChunk}
         >
           {chunkedImages.map((chunk, index) => (
-            <Grid backgroundColor="#EFEFEF" container key={index} justifyContent="center" spacing={10}>
+            <Grid backgroundColor="white" container key={index} justifyContent="center" spacing={10}>
               {chunk.map((image, subIndex) => (
                 <Grid item key={subIndex}>
                   <Box
@@ -105,10 +105,10 @@ import miembro10 from "../../assets/miembro10.png";
                       alt={`Miembro ${index * chunkSize + subIndex + 1}`}
                       style={{ width: '202.8px', height: '206.99px' }}
                     />
-                    <Typography fontSize="18px" sx={{ color: 'black', marginTop: '10px', fontWeight: 'bold' }}>
+                    <Typography fontSize="18px" sx={{ fontFamily: "'Oswald', sans-serif" ,color: 'black', marginTop: '10px', fontWeight: 'bold' }}>
                       {image.profesion}
                     </Typography>
-                    <Typography fontSize="18px" sx={{ color: 'black', fontWeight: 'bold' }}>
+                    <Typography fontSize="18px" sx={{fontFamily: "'Oswald', sans-serif" , color: 'black', fontWeight: 'bold' }}>
                       {image.nombre}
                     </Typography>
                   </Box>

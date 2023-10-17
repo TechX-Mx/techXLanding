@@ -9,7 +9,7 @@ const Inicio = () => {
 
   return (
     <div> <Box sx={{
-      backgroundColor: "#EFEFEF"
+      backgroundColor: "white"
     }}>
 
       <Landing />
@@ -27,5 +27,5 @@ const Inicio = () => {
     </div>
   )
 }
-
+ 
 export default Inicio

@@ -93,15 +93,13 @@ function Navbar() {
                         duration={10}
                         style={{
                           textDecoration: 'none',
-                          fontFamily: 'Playfair Display, serif',
-                          fontWeight: 'bold',
-                          cursor: 'pointer',
+                           cursor: 'pointer',
                         }}
                       >
                         {formattedPage}
                       </ScrollLink>
                     ) : (
-                      <Typography style={{ fontFamily: 'Playfair Display, serif'  }} textAlign="center">
+<Typography textAlign="center">
                         {formattedPage}
                       </Typography>
                     )}
@@ -118,9 +116,7 @@ function Navbar() {
                   duration={10}
                   style={{
                     textDecoration: 'none',
-                    fontFamily: 'Playfair Display, serif',
-                    fontWeight: 'bold',
-                    cursor: 'pointer',
+                     cursor: 'pointer',
                   }}
                 >
                   Sobre Nosotros
@@ -138,9 +134,7 @@ function Navbar() {
               mr: 2,
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
-              fontFamily: 'Playfair Display, serif',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
+               letterSpacing: '.3rem',
               color: 'inherit',
               textDecoration: 'pointer',
             }}
@@ -161,9 +155,8 @@ function Navbar() {
                     color: 'black',
                     display: 'block',
                     textTransform: 'none', // Evita la transformación de texto a minúsculas
-                    fontFamily: 'Playfair Display, serif',
-                    fontWeight: 'bold',
-                  }}
+                    // fontFamily: "Inter, sans-serif",
+                   }}
                 >
                   {page === 'Servicios' || page === 'Proyectos' ? (
                     <ScrollLink
@@ -173,7 +166,7 @@ function Navbar() {
                       offset={0}
                       duration={10}
                       style={{
-                        textDecoration: 'none',fontSize:"16px"
+                        textDecoration: 'none',fontSize:"32px"
                       }}
                     >
                       {formattedPage}
@@ -187,7 +180,7 @@ function Navbar() {
                       duration={10}
                       style={{
                         textDecoration: 'none',
-                        fontSize:"16px"
+                        fontSize:"32px"
                       }}
                     >
                       {formattedPage}
@@ -201,7 +194,8 @@ function Navbar() {
               sx={{ my: 2, color: 'black', display: 'block', textTransform: 'none' }}
             >
               <NavLink to="/nosotros" style={{ textDecoration: 'none' }}>
-                <Typography style={{ fontFamily: 'Playfair Display, serif' }} fontSize="16px" paddingTop="3px" color="rgba(30, 30, 30, 1)" gutterBottom>
+                <Typography style={{  fontFamily: "'Oswald', sans-serif" 
+ }} fontSize="32px" paddingTop="10px" color="rgba(30, 30, 30, 1)" gutterBottom>
                   Sobre Nosotros
                 </Typography>
               </NavLink>
@@ -231,7 +225,7 @@ function Navbar() {
                 </MenuItem>
               ))}
               <MenuItem>
-                <NavLink to="/nosotros" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <NavLink to="/nosotros" style={{ textDecoration: 'none', color: 'inherit',fontFamily: "'Oswald', sans-serif" , fontWeight: "700"  }}>
                   <Typography textAlign="center">Sobre Nosotros</Typography>
                 </NavLink>
               </MenuItem>

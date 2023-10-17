@@ -97,3 +97,23 @@
     background-position: 100% 0%;
   }
 }
+.tilde:before {
+  content: "✔️ ";
+  padding-right: 8px;  color: black; /* o puedes usar #000 si prefieres el formato hexadecimal */
+}
+.alumni-font{
+  font-family: 'Alumni Sans Collegiate One', sans-serif;
+}
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.slide-in-animation {
+  animation: slideInFromLeft 1s forwards; /* 1s es la duración de la animación */
+}

@@ -92,51 +92,56 @@ const Servicios = () => {
     width: '100%',
     maxWidth: 360,
    };
+
+   const [isHovered, setIsHovered] = useState(null);
+
   return (
-    <div id="servicios"  >
-      {/* Título de la sección "Proyectos" */}
-      <Typography style={{ fontFamily: 'Playfair Display, serif'    }}  sx={{ display: "flex", justifyContent: "center", paddingBottom: '100px',  fontSize:"44px" }}>
-        Servicios
-      </Typography>
+    <div id="servicios">
+    <Typography style={{ fontFamily: "'Oswald', sans-serif"  }}  sx={{paddingTop:"150px", display: "flex", justifyContent: "center", paddingBottom: '100px', fontSize:"44px" }}>
+      Que podemos hacer por ti?
+    </Typography>
 
-      {/* Grid de proyectos */}
-      <Grid container justifyContent="center"  columnSpacing={0} rowSpacing={20} paddingBottom='200px' paddingRight={20} paddingLeft={25} columns={{ xs: 15, sm: 8, md: 10, lg: 14.9 }}>
-        {projectImages.map((image, index) => (
-          <Grid item xs={2} sm={6} md={4} lg={2.5} key={index} sx={{ marginBottom: '50px' }}>
-            <Box
-              sx={{
-                width: "114px",
-                height: "104px", // Altura automática para que se ajuste al contenido
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center', // Centrar contenido verticalmente
-                transition: 'transform 0.3s',
-              }}
+    <Grid container justifyContent="center"  columnSpacing={0} rowSpacing={20} paddingBottom='200px' paddingRight={20} paddingLeft={25} columns={{ xs: 15, sm: 8, md: 10, lg: 14.9 }}>
+      {projectImages.map((image, index) => (
+        <Grid item xs={2} sm={6} md={4} lg={2.5} key={index} sx={{ marginBottom: '50px' }}>
+          <Box
+            onMouseEnter={() => setIsHovered(index)}
+            onMouseLeave={() => setIsHovered(null)}
+            sx={{
+              width: "114px",
+              height: "104px",
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              transition: 'transform 0.3s',
+            }}
+          >
+            <img
+              src={image.imageUrl}
+              alt={`Proyecto ${index + 1}`}
+              style={{ width: '100%', height: 'auto', objectFit: 'cover', borderRadius: '11px' }}
+            />
+            <Typography 
+              style={{ fontFamily: "'Oswald', sans-serif" }}
+              sx={{ fontSize: "17px", textAlign: 'center' }}
             >
-              <img
-                src={image.imageUrl}
-                alt={`Proyecto ${index + 1}`} 
-                style={{ width: '100%', height: 'auto', objectFit: 'cover',  borderRadius: '11px  ', // Agrega un borde de 1px negro
-              }}
-              />
-              <Typography style={{ fontFamily: 'Playfair Display, serif' }}
-                sx={{
-                  fontSize: "17px",
-                  textAlign: 'center',
-                }}>{image.nombre}</Typography>
-                 <List sx={style} component="nav" aria-label="mailbox folders"> 
-                <Divider /></List>
-                <Typography style={{ fontFamily: 'Playfair Display, serif' }}
-                sx={{
-                  fontSize: "10px",
-                  textAlign: 'center',
-                }}>Lorem ipsum dolor sit amet, consectetur adipis icing elit, sed do eiusmod tempor incid dunt utlab ore et dolore magna aliqua. Ut enim ad minim veniam weay in the sun.</Typography>
- 
-
-            </Box>
-          </Grid>
-        ))}
-      </Grid>
+              {image.nombre}
+            </Typography>
+            <List sx={style} component="nav" aria-label="mailbox folders">
+              <Divider />
+            </List>
+            {isHovered === index && (
+              <Typography 
+              style={{ fontFamily: "'Oswald', sans-serif" }}
+                sx={{ fontSize: "10px", textAlign: 'center' }}
+              >
+                Lorem ipsum dolor sit amet, consectetur adipis icing elit, sed do eiusmod tempor incid dunt utlab ore et dolore magna aliqua. Ut enim ad minim veniam weay in the sun.
+              </Typography>
+            )}
+          </Box>
+        </Grid>
+      ))}
+    </Grid>
 
 
 
@@ -159,7 +164,7 @@ const Servicios = () => {
           index={currentChunk}
         >
           {chunkedImages2.map((chunk, index) => (
-            <Grid backgroundColor="#EFEFEF" container key={index} justifyContent="center" spacing={10}>
+            <Grid backgroundColor="white" container key={index} justifyContent="center" spacing={10}>
               {chunk.map((image, subIndex) => (
                 <Grid item key={subIndex}>
                   <Box

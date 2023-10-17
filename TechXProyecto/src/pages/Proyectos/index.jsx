@@ -8,14 +8,14 @@ import Form from './form';
 
 const Proyectos = () => {
   const projectImages = [
-    { imageUrl: proyecto2,url:"https://www.todofloral.com/" },
-    { imageUrl: proyecto2,url:"https://www.todofloral.com/" },
-    { imageUrl: proyecto2,url:"https://www.todofloral.com/" },
-    { imageUrl: proyecto2,url:"https://www.todofloral.com/" },
-    { imageUrl: proyecto2 ,url:"https://www.todofloral.com/"},
-    { imageUrl: proyecto2 ,url:"https://www.todofloral.com/"},
-    { imageUrl: proyecto2,url:"https://www.todofloral.com/" },
-    { imageUrl: proyecto2,url:"https://www.todofloral.com/" }
+    { imageUrl: proyecto2,url:"https://www.todofloral.com/",nombre:"Todo Floral"},
+    { imageUrl: proyecto2,url:"https://www.todofloral.com/",nombre:"Todo Floral" },
+    { imageUrl: proyecto2,url:"https://www.todofloral.com/",nombre:"Todo Floral" },
+    { imageUrl: proyecto2,url:"https://www.todofloral.com/",nombre:"Todo Floral" },
+    { imageUrl: proyecto2 ,url:"https://www.todofloral.com/",nombre:"Todo Floral"},
+    { imageUrl: proyecto2 ,url:"https://www.todofloral.com/",nombre:"Todo Floral"},
+    { imageUrl: proyecto2,url:"https://www.todofloral.com/",nombre:"Todo Floral" },
+    { imageUrl: proyecto2,url:"https://www.todofloral.com/" ,nombre:"Todo Floral"}
     // Agrega las URL de las imágenes restantes aquí
   ];
   // useEffect(() => {
@@ -31,10 +31,12 @@ const Proyectos = () => {
 const handleClose = () => {
     setOpen(false)
 }
+  const [hoverIndex, setHoverIndex] = useState(null);
+
     return (
     <div id="proyectos">
     {/* Título de la sección "Proyectos" */}
-    <Typography style={{ fontFamily: 'Playfair Display, serif' }} sx={{ display: "flex", justifyContent: "center", paddingBottom: "100px", marginTop: '105px',fontSize:"45px" }}>
+    <Typography style={{ fontFamily: "'Oswald', sans-serif" }} sx={{ display: "flex", justifyContent: "center", paddingBottom: "100px", marginTop: '105px',fontSize:"45px" }}>
       Proyectos
     </Typography>
 
@@ -43,11 +45,11 @@ const handleClose = () => {
       {projectImages.map((image, index) => (
         <Grid item xs={12} sm={6} md={3.6} key={index}>
           {/* <a href={image.url} target="_blank" rel="noopener noreferrer"> */}
-          <Typography style={{ fontFamily: 'Playfair Display, serif' }} sx={{marginLeft:"138px" ,display:"flex",justifyContent: "center" ,color:"magenta"}}>Todo Floral</Typography>
+          {/* <Typography style={{ fontFamily: 'Playfair Display, serif' }} sx={{marginLeft:"138px" ,display:"flex",justifyContent: "center" ,color:"magenta"}}>Todo Floral</Typography> */}
 
-            <Box
+          <Box
               sx={{
-                width: "382.52px", // 100% - 68px izquierda - 68px derecha
+                width: "382.52px",
                 height: "239.16px",
                 borderRadius: "10px",
                 backgroundColor: 'rgba(30, 30, 30, 0.56)',
@@ -55,13 +57,11 @@ const handleClose = () => {
                 marginRight: '68px',
                 marginBottom: '2rem',
                 transition: 'transform 0.3s',
-               
-                // '&:hover': {
-                //   backgroundColor: 'primary.main',
-                //   opacity: [0.9, 0.8, 0.7],
-                //   transform: 'scale(1.1)',  
-                // }
+                position: 'relative', // para posicionar absolutamente el nombre dentro
+                overflow: 'hidden'    // para mantener todo contenido dentro del Box
               }}
+              onMouseEnter={() => setHoverIndex(index)}  // Establecer el hoverIndex
+              onMouseLeave={() => setHoverIndex(null)}   // Restablecer el hoverIndex
             >
  
                <img
@@ -69,8 +69,25 @@ const handleClose = () => {
                 alt={`Proyecto ${index + 1}`}
                 style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: "10px" }}
               />
-               <Form imageUrl={image.imageUrl}  url={image.url} />  
-             </Box>
+                  <Typography 
+                style={{ 
+                  fontFamily: 'Playfair Display, serif',
+                  position: 'absolute',
+                  bottom: '10px',
+                  left: '135px',
+                  backgroundColor: 'rgba(0, 0, 0, 0.7)',
+                  padding: '5px 10px',
+                  borderRadius: '5px',
+                  color: 'white',
+                  opacity: hoverIndex === index ? 1 : 0,  // 2. Estilo condicional basado en hoverIndex
+                  transition: 'opacity 0.3s'
+                }}
+              >
+                {image.nombre}
+              </Typography>
+              </Box>
+              < Form imageUrl={image.imageUrl}  url={image.url} />  
+
           {/* </a>  */}
           
 
