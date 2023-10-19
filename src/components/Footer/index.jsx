@@ -20,19 +20,19 @@ const Footer = () => {
        }}>
         <Grid container   >
           <Grid item xs={5.9} sx={{ display: 'flex', justifyContent: 'flex-start',alignItems: 'center',marginTop:"-20px"  }}>
-            <img src={icono1} alt="Logo" style={{ width: "20.97px", height: "20.97px" }} />
+            <img src={icono1} alt="Logo" style={{ width: "25.97px", height: "25.97px" }} />
           </Grid>
           <Grid item xs={5.9} sx={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
             <Typography style={{ fontFamily: 'Playfair Display, serif', fontSize: "48px" }}> TechX </Typography>
           </Grid>
           <Grid item xs={5.9} marginTop={-1} sx={{ display: 'flex', justifyContent: 'flex-start',marginTop:"-18px"   }}>
-            <img src={icono2} alt="Logo" style={{ width: "20.97px", height: "20.97px" }} />
+            <img src={icono2} alt="Logo" style={{ width: "25.97px", height: "25.97px" }} />
           </Grid>
           <Grid item xs={5.9} sx={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
             <Typography style={{ fontFamily: 'Playfair Display, serif', fontSize: "16px" }}> Todos Los derechos Reservados © </Typography>
           </Grid>
-          <Grid item xs={5.9} sx={{ display: 'flex', justifyContent: 'flex-start',marginTop:"-4px"    }}>
-            <img src={whatsapp} alt="Logo" style={{ width: "20.97px", height: "20.97px" }} />
+          <Grid item xs={5.9} sx={{ display: 'flex', justifyContent: 'flex-start'    }}>
+            <img src={whatsapp} alt="Logo" style={{ width: "25.97px", height: "25.97px" }} />
           </Grid>
           <Grid item xs={5.9} sx={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center',marginTop:"-10px" }}>
             <Typography style={{ fontFamily: 'Playfair Display, serif', fontSize: "16px" ,paddingTop:"10px"}}> Hermosillo, Sonora, Mexico </Typography>

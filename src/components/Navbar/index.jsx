@@ -10,7 +10,7 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { useState } from 'react';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/fondopnga.png';
 import { Link as ScrollLink } from 'react-scroll';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 
@@ -40,9 +40,20 @@ function Navbar() {
     navigate('/');
     handleCloseNavMenu();
   };
+  const textStyles = {
+    color: "black",
+    textAlign: "center",
+    fontWeight: "600",
+    fontSize: "20px",
+    lineHeight: "16px",
+    fontFamily: "Montserrat, sans-serif",
+    position: "relative",
+    textTransform: "none"
+  };
+
 
   return (
-    <AppBar position="static" style={{ backgroundColor: 'white', height: '100px' }}>
+    <AppBar position="static" style={{ backgroundColor: '#DDDDDD', height: '100px' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
         <a href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
@@ -85,12 +96,12 @@ function Navbar() {
                 return (
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
                     {page === 'Servicios' || page === 'Proyectos' ? (
-                      <ScrollLink
+                      <ScrollLink 
                         to={page.toLowerCase()}
                         spy={true}
                         smooth={true}
                         offset={0}
-                        duration={10}
+                        duration={10} 
                         style={{
                           textDecoration: 'none',
                            cursor: 'pointer',
@@ -99,7 +110,7 @@ function Navbar() {
                         {formattedPage}
                       </ScrollLink>
                     ) : (
-<Typography textAlign="center">
+<Typography   textAlign="center">
                         {formattedPage}
                       </Typography>
                     )}
@@ -148,7 +159,7 @@ function Navbar() {
 
               return (
                 <Button
-                  key={page}
+                  key={page} 
                   onClick={handleCloseNavMenu}
                   sx={{
                     my: 2,
@@ -159,15 +170,13 @@ function Navbar() {
                    }}
                 >
                   {page === 'Servicios' || page === 'Proyectos' ? (
-                    <ScrollLink
+                    <ScrollLink 
                       to={page.toLowerCase()}
                       spy={true}
                       smooth={true}
                       offset={0}
                       duration={10}
-                      style={{
-                        textDecoration: 'none',fontSize:"32px"
-                      }}
+                       style={textStyles}
                     >
                       {formattedPage}
                     </ScrollLink>
@@ -178,10 +187,7 @@ function Navbar() {
                       smooth={true}
                       offset={0}
                       duration={10}
-                      style={{
-                        textDecoration: 'none',
-                        fontSize:"32px"
-                      }}
+                      style={textStyles}
                     >
                       {formattedPage}
                     </ScrollLink>
@@ -189,13 +195,12 @@ function Navbar() {
                 </Button>
               );
             })}
-            <Button
+            <Button 
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: 'black', display: 'block', textTransform: 'none' }}
             >
               <NavLink to="/nosotros" style={{ textDecoration: 'none' }}>
-                <Typography style={{  fontFamily: "'Oswald', sans-serif" 
- }} fontSize="32px" paddingTop="10px" color="rgba(30, 30, 30, 1)" gutterBottom>
+                <Typography    paddingTop="3px" color="rgba(30, 30, 30, 1)" style={textStyles} gutterBottom>
                   Sobre Nosotros
                 </Typography>
               </NavLink>

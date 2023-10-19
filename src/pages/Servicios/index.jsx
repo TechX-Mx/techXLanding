@@ -17,7 +17,8 @@ import tecno4 from "../../assets/tecno4.png";
 import tecno5 from "../../assets/tecno5.png";
 import tecno6 from "../../assets/tecno6.png";
  import { styled } from '@mui/material/styles';
- 
+ import {   Slide } from "react-awesome-reveal";
+
 import js2 from "../../assets/js3.png";
 import icono from "../../assets/icono.png";
 import Carousel from 'react-material-ui-carousel';
@@ -48,7 +49,7 @@ const Servicios = () => {
     // Agrega las URL de las imágenes restantes aquí
   ];
    
-
+  const [inView, setInView] = useState(false);
 
 
   const chunkSize = 3;
@@ -97,18 +98,20 @@ const Servicios = () => {
 
   return (
     <div id="servicios">
+              <Slide direction="left" triggerOnce={false} in={inView}> 
+
     <Typography style={{ fontFamily: "'Oswald', sans-serif"  }}  sx={{paddingTop:"150px", display: "flex", justifyContent: "center", paddingBottom: '100px', fontSize:"44px" }}>
       Que podemos hacer por ti?
-    </Typography>
+    </Typography> </Slide>
 
-    <Grid container justifyContent="center"  columnSpacing={0} rowSpacing={20} paddingBottom='200px' paddingRight={20} paddingLeft={25} columns={{ xs: 15, sm: 8, md: 10, lg: 14.9 }}>
+    <Grid sx={{background: 'linear-gradient(to right, #FFFFFF, #808080)'}} container justifyContent="center"  columnSpacing={0} rowSpacing={20} paddingBottom='200px' paddingRight={20} paddingLeft={25} columns={{ xs: 15, sm: 8, md: 10, lg: 14.9 }}>
       {projectImages.map((image, index) => (
         <Grid item xs={2} sm={6} md={4} lg={2.5} key={index} sx={{ marginBottom: '50px' }}>
           <Box
             onMouseEnter={() => setIsHovered(index)}
             onMouseLeave={() => setIsHovered(null)}
             sx={{
-              width: "114px",
+              width: "114px", 
               height: "104px",
               display: 'flex',
               flexDirection: 'column',
@@ -164,18 +167,19 @@ const Servicios = () => {
           index={currentChunk}
         >
           {chunkedImages2.map((chunk, index) => (
-            <Grid backgroundColor="white" container key={index} justifyContent="center" spacing={10}>
+            <Grid   sx={{   background: 'linear-gradient(to right, #FFFFFF, #808080)',
+          }} container key={index} justifyContent="center" spacing={10}>
               {chunk.map((image, subIndex) => (
-                <Grid item key={subIndex}>
+                <Grid item key={subIndex}  >
                   <Box
                     sx={{
                       display: 'flex',
                       flexDirection: 'column',
                       alignItems: 'center',
-                      textAlign: 'center',
+                      textAlign: 'center', 
                       width: "300px",
-                      height: "300px",
-                      borderRadius: "50%",
+                      height: "300px",    
+                       borderRadius: "50%",
                       transition: 'transform 0.3s',
                       '&:hover': {
                         opacity: [0.9, 0.8, 0.7],
