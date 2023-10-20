@@ -40,44 +40,19 @@ const Landing = () => {
   return (
     <div  >
       {/* Imagen de fondo */}
-      {/* <Box          
- sx={{ flexGrow: 1, height: "100vh", display: 'flex', justifyContent: 'center', alignItems: 'center',marginLeft:"50px" }}>
-        <Grid container spacing={0}  >
-          <Grid item xs={6.5} >
-            <Item sx={{ paddingTop: "300px" }}    >
-              <Typography style={{ textDecoration: 'none', color: 'black',fontFamily: "'Oswald', sans-serif" , fontWeight: "700" }} sx={{ fontWeight: 700, fontSize: "65px", color: "black" }}>
-Creamos Soluciones Digitales              </Typography>
-
-
-              <Typography sx={{ fontWeigth: "bold", fontSize: "25px",paddingTop:"20px" }}  >
-                TechX es una empresa dedicada a brindar servicios de desarrollo tecnologico para empresas.
-
-               </Typography >
-               <Button  sx={{marginTop:"20px",backgroundColor:"gray",borderRadius:"100px",height:"50px",width:"150px"}} variant='contained'>Contactanos</Button>
-            </Item>
-          </Grid>
-          <Grid item xs={5.5}>
-            <Item >
-              <img  className="animatedBox"
-
-                src={hero}
-                style={{ paddingTop: "250px", width: '100%', height: '100%', objectFit: 'cover', borderRadius: "10px" }}
-              />
-            </Item>
-          </Grid>
-           
-        </Grid>
-      </Box> */}
+    
       {/*  */}
       <Stack
-        direction="row"
-        paddingLeft="100px"
-        spacing={2}
-        sx={{
-          background: 'linear-gradient(to right, #808080, #FFFFFF)',
-          minHeight: '100vh'
-        }}
-      >
+    direction="row"
+    paddingLeft="100px"
+    spacing={2}
+    className="stack-kenburns    "   
+    style={{ backgroundImage: `url(${fondoInicio})`, backgroundRepeat:"no-repeat"}}
+    sx={{
+      minHeight: '100vh'
+    }}
+>
+
         <Item className='scale-in-hor-left'><Slide direction="left" triggerOnce={false} in={inView}>
           <Typography style={{
             paddingTop: "25px",
@@ -94,7 +69,7 @@ Creamos Soluciones Digitales              </Typography>
         <Item>
           <img className="animatedBox"
             src={hero}
-            style={{ paddingLeft: "250px", paddingTop: "0px", width: '100%', height: '100%', objectFit: 'cover', borderRadius: "10px" }}
+            style={{ paddingLeft: "550px", paddingTop: "0px", width: '100%', height: '100%', objectFit: 'contain', borderRadius: "10px" }}
           />
         </Item>
       </Stack>
@@ -115,7 +90,7 @@ Creamos Soluciones Digitales              </Typography>
               <Item>
                 <Slide direction="left" triggerOnce={false} in={inView}>
                   <Typography variant="h2"  style={{ fontFamily: 'Oswald, sans-serif', fontWeight: "700", color: "black" }}>
-                    Todos me dicen que debo automatizar mi negocio. Pero por qué?
+                   Sobre Nosotros
                   </Typography>
                 </Slide>
                 <Typography sx={{ fontWeigth: "bold", fontSize: "25px", paddingTop: "20px" }}>
@@ -205,7 +180,7 @@ Creamos Soluciones Digitales              </Typography>
         <iframe
           width="500"
           height="300"
-          src="https://www.youtube.com/embed/oAXOIUlC1T0"
+          src="https://www.instagram.com/reel/CykDKGZPPGo/?utm_source=ig_embed&utm_campaign=loading"
           // title="¿Como es una empresa de software por dentro? - Jalasoft" 
           frameborder="10" style={{
             border: "5px solid black", borderRadius: "20px"  // Bordes redondeados
@@ -213,32 +188,37 @@ Creamos Soluciones Digitales              </Typography>
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
         ></iframe>
+        
       </Box>
 
     
         
         
-    <Box sx={{ width: '100%' ,paddingLeft:"400px"  }}>
+      <Box   sx={{ width: '100%', paddingLeft: "400px",backgroundColor:"gray" }}>
+      
+    <div className="ticker-move">
       <Grid container rowSpacing={1}  columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         <Grid item xs={4}>
-          <Item>1</Item>
+          <Item><Typography  className="ticker-move" sx={{fontSize:"80px"}}> +20</Typography> </Item>
         </Grid>
         <Grid item xs={4}>
-          <Item>2</Item>
+          <Item><Typography className="ticker-move" sx={{fontSize:"80px"}}>14%</Typography></Item>
         </Grid>
         <Grid item xs={4}>
-          <Item>3</Item>
+          <Item><Typography className="ticker-move" sx={{fontSize:"80px"}}>3</Typography></Item>
         </Grid>
         <Grid item xs={4}>
-          <Item>4</Item>
+          <Item><Typography className="ticker-move" sx={{fontSize:"20px"}} >Empresas son con las que hemos trabajado</Typography></Item>
         </Grid>
         <Grid item xs={4}>
-          <Item>5</Item>
+          <Item><Typography className="ticker-move" sx={{fontSize:"20px"}}>Crecio el comercio electronico en Mexico en 2023</Typography></Item>
         </Grid>
-        <Grid item xs={4}>
-          <Item>6</Item>
+        <Grid item xs={4}><Typography className="ticker-move" sx={{fontSize:"20px"}}>
+          <Item>6</Item></Typography>
         </Grid>
       </Grid>
+      </div>
+
     </Box>
     </div>
   );

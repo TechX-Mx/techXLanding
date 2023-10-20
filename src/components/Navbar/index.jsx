@@ -13,6 +13,9 @@ import { useState } from 'react';
 import logo from '../../assets/fondopnga.png';
 import { Link as ScrollLink } from 'react-scroll';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import "./index.css"
+import 'typeface-roboto';
+import 'typeface-mulish';
 
 const sections = ['#servicios', '#proyectos'];
 const pages = ['Inicio', 'Proyectos', 'Servicios'];
@@ -46,19 +49,28 @@ function Navbar() {
     fontWeight: "600",
     fontSize: "20px",
     lineHeight: "16px",
-    fontFamily: "Montserrat, sans-serif",
+    fontFamily: "Roboto, sans-serif",
     position: "relative",
     textTransform: "none"
   };
 
-
+  const textStyles2 = {
+    color: "black",
+    textAlign: "center",
+    fontWeight: "1000",
+    fontSize: "21px",
+    lineHeight: "16px",
+    fontFamily: "'Mulish', sans-serif",
+    position: "relative",
+    textTransform: "none"
+};
   return (
-    <AppBar position="static" style={{ backgroundColor: '#DDDDDD', height: '100px' }}>
+<AppBar position="static" style={{ background: 'linear-gradient(90deg, white, gray)', height: '100px' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
         <a href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
   <Box sx={{ paddingLeft: '28px' }}>
-    <img src={logo} alt="Logo" style={{ width: '110px', height: '100px', cursor: 'pointer' }} />
+    <img className='flip-horizontal-bottom' src={logo} alt="Logo" style={{ width: '110px', height: '100px', cursor: 'pointer' }} />
   </Box>
 </a>
 
@@ -176,7 +188,7 @@ function Navbar() {
                       smooth={true}
                       offset={0}
                       duration={10}
-                       style={textStyles}
+                       style={textStyles2}
                     >
                       {formattedPage}
                     </ScrollLink>
@@ -187,7 +199,7 @@ function Navbar() {
                       smooth={true}
                       offset={0}
                       duration={10}
-                      style={textStyles}
+                      style={textStyles2}
                     >
                       {formattedPage}
                     </ScrollLink>
@@ -200,7 +212,7 @@ function Navbar() {
               sx={{ my: 2, color: 'black', display: 'block', textTransform: 'none' }}
             >
               <NavLink to="/nosotros" style={{ textDecoration: 'none' }}>
-                <Typography    paddingTop="3px" color="rgba(30, 30, 30, 1)" style={textStyles} gutterBottom>
+                <Typography    paddingTop="0px" color="rgba(30, 30, 30, 1)" style={textStyles2} gutterBottom>
                   Sobre Nosotros
                 </Typography>
               </NavLink>

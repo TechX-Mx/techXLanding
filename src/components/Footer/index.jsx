@@ -5,6 +5,16 @@ import icono2 from "../../assets/icono2.png";
 import whatsapp from "../../assets/t.png";
 
 const Footer = () => {
+  const textStyles2 = {
+    color: "white",
+    textAlign: "center",
+    fontWeight: "1000",
+    fontSize: "21px",
+    lineHeight: "16px",
+    fontFamily: "'Mulish', sans-serif",
+    position: "relative",
+    textTransform: "none"
+};
   return (
     <div>
       <Box sx={{
@@ -23,19 +33,19 @@ const Footer = () => {
             <img src={icono1} alt="Logo" style={{ width: "25.97px", height: "25.97px" }} />
           </Grid>
           <Grid item xs={5.9} sx={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
-            <Typography style={{ fontFamily: 'Playfair Display, serif', fontSize: "48px" }}> TechX </Typography>
+            <Typography   style={{ fontFamily: 'Playfair Display, serif', fontSize: "48px" }}  >  TechX </Typography>
           </Grid>
           <Grid item xs={5.9} marginTop={-1} sx={{ display: 'flex', justifyContent: 'flex-start',marginTop:"-18px"   }}>
             <img src={icono2} alt="Logo" style={{ width: "25.97px", height: "25.97px" }} />
           </Grid>
           <Grid item xs={5.9} sx={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
-            <Typography style={{ fontFamily: 'Playfair Display, serif', fontSize: "16px" }}> Todos Los derechos Reservados © </Typography>
+            <Typography   style={textStyles2}> Todos Los derechos Reservados © </Typography>
           </Grid>
           <Grid item xs={5.9} sx={{ display: 'flex', justifyContent: 'flex-start'    }}>
             <img src={whatsapp} alt="Logo" style={{ width: "25.97px", height: "25.97px" }} />
           </Grid>
           <Grid item xs={5.9} sx={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center',marginTop:"-10px" }}>
-            <Typography style={{ fontFamily: 'Playfair Display, serif', fontSize: "16px" ,paddingTop:"10px"}}> Hermosillo, Sonora, Mexico </Typography>
+            <Typography  paddingTop="30px"  style={textStyles2   }> Hermosillo, Sonora, Mexico </Typography>
           </Grid>
         </Grid>
       </Box>
