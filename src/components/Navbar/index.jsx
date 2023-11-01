@@ -58,7 +58,7 @@ function Navbar() {
     color: "black",
     textAlign: "center",
     fontWeight: "1000",
-    fontSize: "21px",
+    fontSize: "15px",
     lineHeight: "16px",
     fontFamily: "'Mulish', sans-serif",
     position: "relative",

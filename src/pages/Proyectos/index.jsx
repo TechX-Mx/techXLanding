@@ -54,9 +54,9 @@ const handleClose = () => {
   return (
       <div id="proyectos">
          
-          <Box m={3.5} sx={{background: 'linear-gradient(to right, #FFFFFF, #808080)' ,}}> 
+          <Box sx={{background: 'linear-gradient(to right, #FFFFFF, #808080)' }} paddingTop={10}> 
           <Slide direction="left" triggerOnce={false} in={inView}> 
-          <Typography style={{ fontFamily: "'Oswald', sans-serif" }} sx={{ display: "flex", justifyContent: "center", paddingBottom: "100px", marginTop: '105px', fontSize: "45px" }}>
+          <Typography style={{ fontFamily: "'Oswald', sans-serif" }} sx={{ display: "flex", justifyContent: "center", paddingBottom: "100px", paddingTop: '20px', fontSize: "45px" }}>
               Proyectos
           </Typography>  </Slide>
           <Carousel
@@ -81,9 +81,10 @@ const handleClose = () => {
                         <Grid item xs={12} sm={6} md={3.6} key={subIndex}>
                             <Box
                                 sx={{
-                                    width: "452px",
-                                    height: "450px",
+                                    width: "352px",
+                                    height: "350px",
                                     borderRadius: "10px",
+                                    marginTop:"50px",
                                     backgroundColor: 'rgba(30, 30, 30, 0.56)',
                                     marginBottom: '2rem',
                                     transition: 'transform 0.3s',
@@ -100,7 +101,7 @@ const handleClose = () => {
                                 <img
                                     src={project.imageUrl}
                                     alt={`Proyecto ${index * chunkSize + subIndex + 1}`}
-                                    style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: "10px" }}
+                                    style={{ width: '100%', height: '100%',  borderRadius: "10px" }}
                                 />
                                  <Typography 
                 style={{ 

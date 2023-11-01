@@ -100,13 +100,13 @@ const Servicios = () => {
     <div id="servicios">
               <Slide direction="left" triggerOnce={false} in={inView}> 
 
-    <Typography style={{ fontFamily: "'Oswald', sans-serif"  }}  sx={{paddingTop:"150px", display: "flex", justifyContent: "center", paddingBottom: '100px', fontSize:"44px" }}>
+    <Typography style={{ fontFamily: "'Oswald', sans-serif"  }}  sx={{ color:"black", display: "flex", justifyContent: "center", paddingBottom: '50px', fontSize:"44px" }}>
       Que podemos hacer por ti?
     </Typography> </Slide>
 
     <Grid sx={{background: 'linear-gradient(to right, #FFFFFF, #808080)'}} container justifyContent="center"  columnSpacing={0} rowSpacing={20} paddingBottom='200px' paddingRight={20} paddingLeft={25} columns={{ xs: 15, sm: 8, md: 10, lg: 14.9 }}>
       {projectImages.map((image, index) => (
-        <Grid item xs={2} sm={6} md={4} lg={2.5} key={index} sx={{ marginBottom: '50px' }}>
+        <Grid item xs={2} sm={6} md={4} lg={2.5} key={index}  >
           <Box
             onMouseEnter={() => setIsHovered(index)}
             onMouseLeave={() => setIsHovered(null)}
@@ -122,11 +122,11 @@ const Servicios = () => {
             <img
               src={image.imageUrl}
               alt={`Proyecto ${index + 1}`}
-              style={{ width: '100%', height: 'auto', objectFit: 'cover', borderRadius: '11px' }}
+  style={{ width: '100%', height: 'auto', objectFit: 'cover', borderRadius: '11px', border: "5px solid black" }}
             />
             <Typography 
-              style={{ fontFamily: "'Oswald', sans-serif" }}
-              sx={{ fontSize: "17px", textAlign: 'center' }}
+              style={{ fontFamily: "'Oswald', sans-serif"  }}
+              sx={{ fontSize: "17px", textAlign: 'center' ,color:"black" }}
             >
               {image.nombre}
             </Typography>
@@ -149,6 +149,9 @@ const Servicios = () => {
 
 
 
+
+
+<Box  sx={{background: 'linear-gradient(to right, #FFFFFF, #808080)' }}> 
       <Carousel
           autoPlay={false}
           animation="slide"
@@ -156,11 +159,10 @@ const Servicios = () => {
           navButtonsAlwaysVisible
           navButtonsProps={{
             style: {
-              backgroundColor: 'rgba(0, 0, 0, 0.3)',
+              backgroundColor: 'gray',
               borderRadius: '50%',
               color: 'white',
-              marginTop: "-200px"
-            },
+             },
           }}
           NextIcon={<KeyboardArrowRightIcon />}
           PrevIcon={<KeyboardArrowLeftIcon />}
@@ -194,7 +196,7 @@ const Servicios = () => {
                       style={{ width: '45%', height: '45%',borderRadius:"50%" }}
                     />
                     
-                    <Typography fontSize="18px" sx={{ color: 'black', fontWeight: 'bold' }}>
+                    <Typography  style={{ fontFamily: "'Oswald', sans-serif" }} fontSize="18px" sx={{ color: 'black', fontWeight: 'bold' }}>
                       {image.nombre}
                     </Typography>
                   </Box>
@@ -203,6 +205,11 @@ const Servicios = () => {
             </Grid>
           ))}
         </Carousel>
+        </Box>
+
+ 
+
+
 
     </div>
   );

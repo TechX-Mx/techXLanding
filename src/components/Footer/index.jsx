@@ -9,7 +9,7 @@ const Footer = () => {
     color: "white",
     textAlign: "center",
     fontWeight: "1000",
-    fontSize: "21px",
+    fontSize: "16px",
     lineHeight: "16px",
     fontFamily: "'Mulish', sans-serif",
     position: "relative",
@@ -45,7 +45,7 @@ const Footer = () => {
             <img src={whatsapp} alt="Logo" style={{ width: "25.97px", height: "25.97px" }} />
           </Grid>
           <Grid item xs={5.9} sx={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center',marginTop:"-10px" }}>
-            <Typography  paddingTop="30px"  style={textStyles2   }> Hermosillo, Sonora, Mexico </Typography>
+            <Typography sx={{paddingTop:"10px" }}   style={textStyles2   }> Hermosillo, Sonora, Mexico </Typography>
           </Grid>
         </Grid>
       </Box>
