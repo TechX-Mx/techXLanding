@@ -35,18 +35,7 @@ import Servicios from '../Servicios';
   const [currentChunk, setCurrentChunk] = useState(0);
   const [inView, setInView] = useState(false);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      // Avanzar al siguiente grupo de imágenes
-      setCurrentChunk((prevChunk) => (prevChunk + 1) % Math.ceil(projectImages.length / chunkSize));
-    }, 3000); // Cambiar cada 3 segundos
-
-    return () => {
-      // Limpia el intervalo cuando el componente se desmonta
-      clearInterval(interval);
-    };
-  }, []);
-
+   
   const chunkedImages = projectImages.reduce((resultArray, item, index) => {
     const chunkIndex = Math.floor(index / chunkSize);
 
@@ -63,11 +52,14 @@ import Servicios from '../Servicios';
     <div>
       <Servicios/> 
       
-      <Box  sx={{background: 'linear-gradient(to right, #FFFFFF, #808080)'}} >
-        
-        <Typography  style={{ fontFamily: "'Oswald', sans-serif" }} variant="h4" sx={{ display: "flex", justifyContent: "center", paddingTop: "62px",paddingBottom: "62px" }}>
+      <Box  sx={{  background: 'linear-gradient(to top, gray, black)' }} >
+       
+      <Slide direction="left" triggerOnce={false} in={inView}> 
+
+        <Typography  style={{color: 'white', fontFamily: "'Oswald', sans-serif" }} variant="h2" sx={{ display: "flex", justifyContent: "center", paddingTop: "62px",paddingBottom: "62px" }}>
           Sobre Nosotros
-        </Typography>
+        </Typography></Slide>
+       
          <Carousel
           autoPlay={false}
           animation="slide"
@@ -86,15 +78,20 @@ import Servicios from '../Servicios';
           index={currentChunk}
         >
           {chunkedImages.map((chunk, index) => (
-            <Grid  sx={{background: 'linear-gradient(to right, #FFFFFF, #808080)'}}  container key={index} justifyContent="center" spacing={10}>
-              {chunk.map((image, subIndex) => (
+ <Grid
+ container
+ key={index}
+ justifyContent="center"
+ spacing={10}
+ sx={{ background: 'transparent', padding: '20px' }}  
+>              {chunk.map((image, subIndex) => (
                 <Grid item key={subIndex}>
                   <Box
                     sx={{
                       display: 'flex',
                       flexDirection: 'column',
                       alignItems: 'center',
-                      textAlign: 'center',
+                      textAlign: 'center',marginTop:"50px",
                       width: "300px",
                       height: "300px",
                       borderRadius: "50%",
@@ -106,17 +103,16 @@ import Servicios from '../Servicios';
                       marginLeft: '10px',
                     }}
                   >
-                                  <Slide direction="left" triggerOnce={false} in={inView}> 
 
                     <img
                       src={image.imageUrl}
                       alt={`Miembro ${index * chunkSize + subIndex + 1}`}
-                      style={{ width: '202.8px', height: '206.99px' }}
-                    />  </Slide>
-                    <Typography fontSize="18px" sx={{ fontFamily: "'Oswald', sans-serif" ,color: 'black', marginTop: '10px', fontWeight: 'bold' }}>
+                      style={{ width: '152.8px', height: '156.99px' }}
+                    />  
+                    <Typography fontSize="18px" sx={{ fontFamily: "'Oswald', sans-serif" ,color: 'white', marginTop: '10px', fontWeight: 'bold' }}>
                       {image.profesion}
                     </Typography>
-                    <Typography fontSize="18px" sx={{fontFamily: "'Oswald', sans-serif" , color: 'black', fontWeight: 'bold' }}>
+                    <Typography fontSize="18px" sx={{fontFamily: "'Oswald', sans-serif" , color: 'white', fontWeight: 'bold' }}>
                       {image.nombre}
                     </Typography>
                   </Box>

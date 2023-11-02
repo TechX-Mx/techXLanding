@@ -65,7 +65,7 @@ function Navbar() {
     textTransform: "none"
 };
   return (
-<AppBar position="static" style={{ background: 'linear-gradient(90deg, white, gray)', height: '100px' }}>
+<AppBar position="static" style={{ background: 'linear-gradient(90deg, black, gray)', height: '100px' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
         <a href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
