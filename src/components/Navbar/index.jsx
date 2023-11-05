@@ -11,6 +11,7 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { useState } from 'react';
 import logo from '../../assets/fondopnga.png';
+ 
 import { Link as ScrollLink } from 'react-scroll';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import "./index.css"
@@ -55,14 +56,18 @@ function Navbar() {
   };
 
   const textStyles2 = {
-    color: "black",
+    color: "white", // Cambiado de black a white
     textAlign: "center",
     fontWeight: "1000",
     fontSize: "15px",
     lineHeight: "16px",
-    fontFamily: "'Mulish', sans-serif",
+    fontFamily: "'Poppins', sans-serif", // Cambiado a Poppins
     position: "relative",
     textTransform: "none"
+  };
+const handleRedirect = (path) => {
+  navigate(path);
+  handleCloseNavMenu();
 };
   return (
 <AppBar position="static" style={{ background: 'linear-gradient(90deg, black, gray)', height: '100px' }}>
@@ -70,7 +75,7 @@ function Navbar() {
         <Toolbar disableGutters>
         <a href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
   <Box sx={{ paddingLeft: '28px' }}>
-    <img className='flip-horizontal-bottom' src={logo} alt="Logo" style={{ width: '110px', height: '100px', cursor: 'pointer' }} />
+    <img   src={logo} alt="Logo" style={{ width: '110px', height: '100px', cursor: 'pointer' }} />
   </Box>
 </a>
 
@@ -107,7 +112,7 @@ function Navbar() {
 
                 return (
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    {page === 'Servicios' || page === 'Proyectos' ? (
+                    {   page === 'Proyectos' ? (
                       <ScrollLink 
                         to={page.toLowerCase()}
                         spy={true}
@@ -122,9 +127,9 @@ function Navbar() {
                         {formattedPage}
                       </ScrollLink>
                     ) : (
-<Typography   textAlign="center">
-                        {formattedPage}
-                      </Typography>
+<Typography textAlign="center" style={{ fontFamily: "'Poppins', sans-serif", color: "white" }}>
+  {formattedPage}
+</Typography>
                     )}
                   </MenuItem>
                 );
@@ -166,9 +171,11 @@ function Navbar() {
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
-            {pages.map((page) => {
+           
+           {pages.map((page) => {
               const formattedPage = page.charAt(0).toUpperCase() + page.slice(1).toLowerCase();
 
+              
               return (
                 <Button
                   key={page} 
@@ -181,7 +188,7 @@ function Navbar() {
                     // fontFamily: "Inter, sans-serif",
                    }}
                 >
-                  {page === 'Servicios' || page === 'Proyectos' ? (
+                  {  page === 'Proyectos' ? (
                     <ScrollLink 
                       to={page.toLowerCase()}
                       spy={true}
@@ -236,15 +243,13 @@ function Navbar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
+              
               <MenuItem>
-                <NavLink to="/nosotros" style={{ textDecoration: 'none', color: 'inherit',fontFamily: "'Oswald', sans-serif" , fontWeight: "700"  }}>
-                  <Typography textAlign="center">Sobre Nosotros</Typography>
-                </NavLink>
+              <NavLink to="/nosotros" style={{ textDecoration: 'none', color: 'white', fontFamily: "'Poppins', sans-serif" }}>
+  <Typography paddingTop="0px" gutterBottom>
+    Sobre Nosotros
+  </Typography>
+</NavLink>
               </MenuItem>
             </Menu>
           </Box>

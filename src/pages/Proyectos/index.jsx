@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Stack, TextField, Typography } from '@mui/material';
+import { Box, Button, Grid, Link, Stack, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import Carousel from 'react-material-ui-carousel';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
@@ -13,6 +13,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
+import "./styles.css"
  const Proyectos = () => {
   const projectImages = [
     { imageUrl: proyecto2, url: "https://www.todofloral.com/", nombre: "Todo Floral" },
@@ -59,11 +60,16 @@ const calculateDelay = (index) => {
     <div id="proyectos">
       <Box sx={{ background: 'linear-gradient(to right, #808080, #FFFFFF)',height:"100vh" }}  >
         <Slide direction="left" triggerOnce={false}>
-          <Typography  variant="h2" style={{ fontFamily: "'Oswald', sans-serif" }} sx={{ display: "flex",paddingTop:"50px", justifyContent: "center", paddingBottom: "50px" }}>
+          <Typography  variant="h2" style={{ fontWeight: 700,fontFamily: "'Oswald', sans-serif" }} sx={{ display: "flex",paddingTop:"50px", justifyContent: "center", paddingBottom: "50px" }}>
             Proyectos
+          </Typography></Slide>
+          <Typography   style={{ fontFamily: "'Oswald', sans-serif" }} sx={{textAlign:"left", display: "flex" , justifyContent: "center",paddingLeft:"50px",paddingRight:"50px" }}>
+          But we ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+Nuestros ultimos proyectos realizados con tecnologia avanzada 
+
           </Typography>
-        </Slide>
-        <Carousel
+         
+       <Carousel
   autoPlay={true}
   interval={5000}
   animation="slide"
@@ -75,9 +81,10 @@ const calculateDelay = (index) => {
           {chunkedProjects.map((chunk, index) => (
             <Grid container key={index}  justifyContent="space-around"  spacing={2}>
               {chunk.map((project, subIndex) => (
-                <Grid item xs={12} sm={6} md={3.5}  key={subIndex}>
-                  <Box
-                    sx={{
+                
+                <Grid item xs={12} sm={6} md={3}  key={subIndex}>
+                  <Box   
+                    sx={{ 
                       width: "350px",
                       height: "250px",
                       borderRadius: "10px",
@@ -91,11 +98,12 @@ const calculateDelay = (index) => {
                     onMouseEnter={() => setHoverIndex(index)}
                     onMouseLeave={() => setHoverIndex(null)}
                   >
-                    <img
+                    <img  
                       src={project.imageUrl}
                       alt={`Proyecto ${index * chunkSize + subIndex + 1}`}
                       style={{ width: '100%', height: '100%', objectFit: "cover", borderRadius: "10px" }}
                     />
+<Link href={project.url} underline="none" target="_blank" rel="noopener">
                     <Typography
                       style={{
                         fontFamily: "'Oswald', sans-serif",
@@ -113,13 +121,33 @@ const calculateDelay = (index) => {
                       }}
                     >
                       {project.nombre}
-                    </Typography>
+                    </Typography></Link> 
+                    <Typography
+                      style={{
+                        fontFamily: "'Oswald', sans-serif",
+                        position: 'absolute',
+                        bottom: '-0px',
+                        left: '72.5px',
+                        background: 'linear-gradient(to bottom, #cccccc 0%, #333333 100%)',
+                        padding: '15px 60px',
+                        borderRadius: '5px',
+                        color: 'black',
+                        opacity: hoverIndex === index ? 1 : 0,
+                        transition: 'opacity 0.3s',
+                        fontWeight: "300px",
+                        fontSize: "20px"
+                      }}
+                    >
+                      Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+                    </Typography>  
                   </Box>
+                   
                 </Grid>
               ))}
             </Grid>
           ))}
-        </Carousel>
+        </Carousel>  
+ 
       </Box>
 
 
@@ -134,12 +162,12 @@ const calculateDelay = (index) => {
         </Slide>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} justifyContent="flexStart" alignItems="flexStart" marginTop="25px" style={{ height: '100%' }}>
         <Grid item xs={6} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <Box style={{ border: "1px solid white", padding: "10px", marginBottom: "10px", width: "300px" }}>
-            <Typography sx={{ color: "white", mb: 8 }} >
+          <Box style={{ border: "5px solid white", padding: "10px", marginBottom: "10px", width: "300px" }}>
+            <Typography sx={{ color: "white", mb: 8 ,fontFamily: "'Oswald', sans-serif" }} >
               Redes Sociales
             </Typography>
             <Button sx={{
-              color: "white",
+              color: "white", fontFamily: "'Oswald', sans-serif",
               borderColor: "white",
               borderWidth: "2px",
               borderStyle: "solid",
@@ -153,18 +181,18 @@ const calculateDelay = (index) => {
             </Button>
           </Box>
 
-          <Box style={{ border: "1px solid white", padding: "10px", width: "300px" }}>
-            <Typography sx={{ color: "white", mb: 2 }}>
+          <Box style={{ border: "5px solid white", padding: "10px", width: "300px" }}>
+            <Typography sx={{ color: "white", mb: 2,fontFamily: "'Oswald', sans-serif" }}>
               TechX
             </Typography>
-            <Typography sx={{ color: "white", mb: 2 }}>     <LocationOnIcon sx={{ mr: 1 }} />
+            <Typography sx={{ color: "white", mb: 2,fontFamily: "'Oswald', sans-serif" }}>     <LocationOnIcon sx={{ mr: 1 }} />
 
               México
             </Typography>
-            <Typography sx={{ color: "white", mb: 2 }}> <PhoneIcon sx={{ mr: 1 }} />
+            <Typography sx={{ color: "white", mb: 2,fontFamily: "'Oswald', sans-serif" }}> <PhoneIcon sx={{ mr: 1 }} />
               +52 662 2297062
             </Typography>
-            <Typography sx={{ color: "white" , mb: 2}}> <EmailIcon sx={{ mr: 1 }} />
+            <Typography sx={{ color: "white" , mb: 2,fontFamily: "'Oswald', sans-serif"}}> <EmailIcon sx={{ mr: 1 }} />
               desarollotechx@gmail.com
             </Typography>
            
@@ -178,7 +206,7 @@ const calculateDelay = (index) => {
         <Stack spacing={2} sx={{ width: '100%', marginTop:"50px"}}>
     <TextField 
       sx={{
-         
+          
         background: "#D3D3D3",
         borderRadius: "15px",
         '& .MuiOutlinedInput-root': {
@@ -235,7 +263,7 @@ const calculateDelay = (index) => {
       justifyContent:"center",
       alignItems:"center" }}>  
     <Button sx={{
-       
+       fontFamily: "'Oswald', sans-serif",
       color: "black",
       borderColor: "white",
       borderWidth: "2px",

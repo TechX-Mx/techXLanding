@@ -12,7 +12,7 @@ import gif9 from "../../assets/gif9.gif";
 import gif10 from "../../assets/gif10.gif";
 import tecno1 from "../../assets/html-5.png";
 import tecno2 from "../../assets/css-3.png";
-import tecno3 from "../../assets/tecno3.png";
+import tecno3 from "../../assets/reactIcono.png";
 import tecno4 from "../../assets/nodo-js.png";
 import tecno5 from "../../assets/tecno5.png";
 import tecno6 from "../../assets/tecno6.png";
@@ -101,14 +101,14 @@ const Servicios = () => {
     <div id="servicios">
               <Slide direction="left" triggerOnce={false} in={inView}> 
 
-    <Typography style={{ fontFamily: "'Oswald', sans-serif"  }}  sx={{paddingTop:"80px" ,color:"white", display: "flex", justifyContent: "center", paddingBottom: '50px', fontSize:"44px" }}>
+    <Typography style={{fontWeight: 700, fontFamily: "'Oswald', sans-serif"  }}  sx={{paddingTop:"80px" ,color:"white", display: "flex", justifyContent: "center", paddingBottom: '50px', fontSize:"44px" }}>
       ¿Qué podemos hacer por ti?
     </Typography> </Slide>
 
-    <Grid sx={{background: 'linear-gradient(to top, black, gray)' }} container justifyContent="center"  columnSpacing={0} rowSpacing={25} paddingBottom='200px' paddingRight={20} paddingLeft={25} columns={{ xs: 15, sm: 8, md: 10, lg: 14.9 }}>
+    <Grid sx={{background: 'linear-gradient(to top, black, #333333)'  }} marginTop={-25}  container justifyContent="center"  columnSpacing={0} rowSpacing={30} paddingBottom='200px' paddingRight={20} paddingLeft={25} columns={{ xs: 15, sm: 8, md: 10, lg: 14.9 }}>
       {projectImages.map((image, index) => (
         <Grid item xs={2} sm={6} md={4} lg={2.5} key={index}  >
-          <Box
+          <Box 
             onMouseEnter={() => setIsHovered(index)}
             onMouseLeave={() => setIsHovered(null)}
             sx={{
@@ -117,7 +117,7 @@ const Servicios = () => {
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              transition: 'transform 0.3s',
+              transition: 'transform 0.3s',rowSpacing:"200px"
             }}
           >
             <img
@@ -127,7 +127,7 @@ const Servicios = () => {
             />
             <Typography 
               style={{ fontFamily: "'Oswald', sans-serif"  }}
-              sx={{ fontSize: "17px", textAlign: 'center' ,color:"white" }}
+              sx={{ fontSize: "20px", textAlign: 'center' ,color:"white" }}
             >
               {image.nombre}
             </Typography>
@@ -137,7 +137,7 @@ const Servicios = () => {
             {isHovered === index && (
               <Typography 
               style={{ fontFamily: "'Oswald', sans-serif" }}
-                sx={{ fontSize: "10px", textAlign: 'center',color:"white" }}
+                sx={{ fontSize: "12px", textAlign: 'center',color:"white" }}
               >
                 Lorem ipsum dolor sit amet, consectetur adipis icing elit, sed do eiusmod tempor incid dunt utlab ore et dolore magna aliqua. Ut enim ad minim veniam weay in the sun.
               </Typography>

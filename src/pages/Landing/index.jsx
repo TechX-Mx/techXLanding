@@ -21,6 +21,9 @@ import empresa8 from '../../assets/empresa8.jpg';
 import fondoNuevo from "../../assets/fondoNuevo.jpg"
 import fondo2 from "../../assets/fondo2.jpg"
 import sobreN from "../../assets/img9.jpg"
+import logo from "../../assets/fondopnga.png"
+import sinFondo from '../../assets/sinFondo.png';
+
 import Stack from '@mui/material/Stack';
  import {    IconButton } from '@material-ui/core';
 
@@ -82,7 +85,7 @@ const Landing = () => {
       // paddingLeft:"500px",
       
      }}>
-        <Fade in={showBienvenido} timeout={500}>
+        {/* <Fade in={showBienvenido} timeout={500}>
         <Typography sx={{
           fontSize: "40px",
           color: 'white',
@@ -91,7 +94,7 @@ const Landing = () => {
         }}>
           Bienvenido
         </Typography>
-      </Fade>
+      </Fade> */}
 <Slide direction="left" triggerOnce={false} in={inView}>
    <Typography style={{
             paddingTop: "25px",
@@ -128,7 +131,7 @@ const Landing = () => {
               </Typography>
             </Slide>
             <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <img src={sobreN} style={{ width: '50%', height: '50%', objectFit: 'contain', borderRadius: "10px" }} />
+              <img src={sinFondo} style={{ width: '50%', height: '50%', objectFit: 'contain', borderRadius: "10px" }} />
             </Box>
           </Box>
         </Item>
@@ -159,52 +162,104 @@ const Landing = () => {
       {/*Estadisticas */}
 
       <Box
-        sx={{
-          width: '100%',
-          
-          display: 'flex',
-          flexDirection: 'column',
-           
-          alignItems: 'center',  
-          background: '#333333',  paddingTop: "50px",
-        }}
-      >  <Slide direction="left" triggerOnce={false} in={inView}>
-          <Typography variant="h2" fontWeight="700"   style={{ fontFamily: 'Oswald, sans-serif',color:"white" }}
-              >  
-            Transformando tu negocio,<br /> una solución tecnológica a la vez    </Typography></Slide>
+  sx={{
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center', // Centrado verticalmente, teniendo en cuenta el padding
+    alignItems: 'center', // Centrado horizontalmente
+    background: '#333333',
+    paddingTop: "50px",
+    paddingBottom: "0px", // Puedes ajustar el paddingBottom para equilibrar con paddingTop si es necesario
+  }}
+>
+  <Slide direction="left" triggerOnce={false} in={inView}>
+    <Typography 
+      variant="h2" 
+      fontWeight="700"   
+      style={{
+        fontFamily: 'Oswald, sans-serif',
+        color: "white",
+        textAlign: 'center' // Asegura que el texto esté centrado horizontalmente dentro de su contenedor
+      }}
+    >  
+      Transformando tu negocio,<br />una solución tecnológica a la vez
+    </Typography>
+  </Slide>
+</Box>
+
+
+
+
+
+ 
+<Box sx={{
+  paddingBottom: "100px",
+  width: '100%',
+  height: "100vh",
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
+  background: '#333333',
+  marginX: 'auto', // Esto centra el Box en el medio horizontalmente, manteniendo el mismo espacio en los lados
+  paddingX: '16px', // Añade el mismo padding a los lados derecho e izquierdo, ajusta según sea necesario
+}}>
+
+<div style={{ width: '100%', maxWidth: '1200px', margin: '0 auto' }}> 
+    <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+        <Grid item xs={4}>
+          <Item>
+            <Typography   sx={{fontWeight: 900,paddingTop:"100px",fontWeight: 800,fontSize:"80px",color:"white",fontFamily: 'Oswald, sans-serif'}}>   <span style={{ fontSize: "60px" }}>+</span>20</Typography>
+             </Item>
+        </Grid>
         
-      </Box>
-
-
-
-
-      <Box   sx={{
-          paddingBottom:"100px", width: '100%',  height:"100vh",  background: '#333333' }}>
-
-    <div >
-      <Grid container rowSpacing={10}  columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         <Grid item xs={4}>
-          <Item><Typography   sx={{paddingTop:"100px",fontSize:"80px",color:"white",fontFamily: 'Oswald, sans-serif'}}> +20</Typography> </Item>
+          <Item> <Typography sx={{ fontWeight: 900,paddingTop: "100px", fontSize: "80px", color: "white", fontFamily: 'Oswald, sans-serif', position: 'relative' }}>
+        14
+        <span style={{ 
+          position: 'absolute',
+          fontSize: "60px",
+          lineHeight: '0', // Quita espacio extra de la línea
+          top: '72.5%', // Posiciona a la mitad de la altura del elemento padre
+          transform: 'translateY(-50%)', // Desplaza el elemento hacia arriba a la mitad de su altura
+        }}>%</span>
+      </Typography></Item>
         </Grid>
         <Grid item xs={4}>
-          <Item><Typography   sx={{paddingTop:"100px",fontSize:"80px",color:"white",fontFamily: 'Oswald, sans-serif'}}>14%</Typography></Item>
+          <Item>
+            <Typography   sx={{fontWeight: 900,paddingTop:"100px",fontSize:"80px",color:"white",fontFamily: 'Oswald, sans-serif'}}>180
+            <span style={{ 
+        position: 'relative', // Se usa para posicionar el grado relativo a su posición normal
+        top: '-0.2em', // Mueve el grado hacia arriba, ajusta según sea necesario
+        fontSize: "60px", // Tamaño del grado, puede ser diferente del número
+      }}>º</span></Typography>
+ 
+            </Item>
         </Grid>
         <Grid item xs={4}>
-          <Item><Typography   sx={{paddingTop:"100px",fontSize:"80px",color:"white",fontFamily: 'Oswald, sans-serif'}}>180º</Typography></Item>
-        </Grid>
-        <Grid item xs={4}>
-          <Item><Typography   sx={{fontSize:"20px",color:"white",fontFamily: 'Oswald, sans-serif'}} >Son las empresas  con las que hemos trabajado</Typography></Item>
+          <Item>
+            {/* <Typography   sx={{fontSize:"20px",color:"white",fontFamily: 'Oswald, sans-serif'}} >Son las empresas  con las que hemos trabajado</Typography> */}
+            <Typography   sx={{fontSize:"20px",color:"white",fontFamily: 'Oswald, sans-serif'}} >Empresas trabajadas con soluciones innovadoras y eficientes</Typography>
+
+          </Item>
         </Grid>
         <Grid item xs={4}>
           <Item><Typography  sx={{fontSize:"20px",color:"white",fontFamily: 'Oswald, sans-serif'}}>Creció el comercio electrónico en México en 2023</Typography></Item>
         </Grid>
         <Grid item xs={4}> 
-          <Item><Typography   sx={{fontSize:"20px",color:"white",fontFamily: 'Oswald, sans-serif'}}>Es el giro  que puede dar tu negocio</Typography></Item> 
+          <Item><Typography   sx={{fontSize:"20px",color:"white",fontFamily: 'Oswald, sans-serif'}}>Es el giro   que puede dar tu negocio</Typography></Item> 
         </Grid>
       </Grid>
       </div>
 
     </Box>
+
+
+
+
+
+
     <Box
   sx={{
     width: '100%',
@@ -265,13 +320,13 @@ const Landing = () => {
             paddingTop: "50px",
             textDecoration: 'none', color: 'white', fontSize: "75px", fontFamily: "'Oswald', sans-serif", fontWeight: "700"
           }} sx={{ fontWeight: 700, fontSize: "100px", color: "white" }}>
-           Lo que nuestros clientes dicen
+           Testimonios de nuestros clientes
           </Typography></Slide>
-          <Grid container rowSpacing={1}  columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+          <Grid container rowSpacing={1} padding={5} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         <Grid item xs={4} >
           <Item><Typography
-          style={{ textAlign: 'justify' }} // Añadido para justificar el texto
-          sx={{ fontSize: "15px", color: "white", paddingTop: "100px" }}
+          style={{ textAlign: 'justify',fontFamily: "'Oswald', sans-serif" }} 
+          sx={{ fontSize: "15px", color: "white", paddingTop: "100px" }} 
         > Boost your product and service's credibility by
 adding testimonials from your clients. People
 love recommendations so feedback from
@@ -279,7 +334,7 @@ others who've tried it is invaluable.</Typography> </Item>
         </Grid>
         <Grid item xs={4}>
           <Item><Typography
-          style={{ textAlign: 'justify' }} // Añadido para justificar el texto
+          style={{ textAlign: 'justify',fontFamily: "'Oswald', sans-serif" }} // Añadido para justificar el texto
           sx={{ fontSize: "15px", color: "white", paddingTop: "100px" }}
         >Boost your product and service's credibility by
 adding testimonials from your clients. People
@@ -288,7 +343,7 @@ others who've tried it is invaluable.</Typography></Item>
         </Grid>
         <Grid item xs={4}>
           <Item><Typography
-          style={{ textAlign: 'justify' }} // Añadido para justificar el texto
+          style={{ textAlign: 'justify',fontFamily: "'Oswald', sans-serif" }}// Añadido para justificar el texto
           sx={{ fontSize: "15px", color: "white", paddingTop: "100px" }}
         >Boost your product and service's credibility by
 adding testimonials from your clients. People
