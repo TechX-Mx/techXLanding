@@ -17,7 +17,7 @@ const Clientes = () => {
     triggerOnce: true
   });
 
-  const images = [empresa1, empresa2, empresa3, empresa4, empresa5, empresa6, empresa7, empresa8];
+  const images = [empresa1, empresa2, empresa3, empresa4, empresa5, empresa6, empresa7, empresa8,"docappoint"];
 
   return (
     <div>  
