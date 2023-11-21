@@ -71,7 +71,7 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
   const [inView, setInView] = useState(false);
 
 
-  const chunkSize =4;
+  const chunkSize =8;
   const chunkedImages2 = projectImages2.reduce((resultArray, item, index) => {
     const chunkIndex2 = Math.floor(index / chunkSize);
 
@@ -127,7 +127,7 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 
 
 
-   <Box sx={{ background: '#333333' , height:"100vh"}}>
+   <Box sx={{ background: '#333333' , height:"120vh"}}>
    <Slide direction="left" triggerOnce={false} in={inView}> 
 
 <Typography style={{fontWeight: 700, fontFamily: "'Oswald', sans-serif"  }} variant="h2" sx={{ paddingTop:"50px",color:"white", display: "flex", justifyContent: "center", paddingBottom: '50px' }}>

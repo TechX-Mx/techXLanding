@@ -4,9 +4,9 @@ import { useState } from "react";
 import { useInView } from 'react-intersection-observer';
 // Importaciones de tus imágenes...
 import empresa1 from '../../assets/empresa1.jpg';
-import empresa2 from '../../assets/empresa2.jpg';
-import empresa3 from '../../assets/empresa3.jpg';
-import empresa4 from '../../assets/empresa4.jpg';
+import empresa2 from '../../assets/logoCruzRoja.png';
+import empresa3 from '../../assets/pixieEmpresa.png';
+import empresa4 from '../../assets/parkea.jpeg';
 import empresa5 from '../../assets/empresa5.jpg';
 import empresa6 from '../../assets/empresa6.jpg';
 import empresa7 from '../../assets/empresa7.jpg';
@@ -17,7 +17,7 @@ const Clientes = () => {
     triggerOnce: true
   });
 
-  const images = [empresa1, empresa2, empresa3, empresa4, empresa5, empresa6, empresa7, empresa8,"docappoint"];
+  const images = [empresa3,empresa2,empresa4 ];
 
   return (
     <div>  
@@ -37,12 +37,12 @@ const Clientes = () => {
         }}
       >
         <Slide direction="left" triggerOnce={false} in={inView}>
-          <Typography variant="h2" paddingBottom="50px" paddingTop="0px" fontWeight="700" style={{ fontFamily: 'Oswald, sans-serif', color: "white" }}>
+          <Typography variant="h2" paddingBottom="150px" paddingTop="0px" fontWeight="700" style={{ fontFamily: 'Oswald, sans-serif', color: "white" }}>
             Nuestros Clientes
           </Typography>
         </Slide>
 
-        <Grid container spacing={2} justifyContent="center" sx={{ px: { xs: 2, sm: 3, md: 4, lg: 5 }, mx: 'auto', width: '100%', maxWidth: 'lg' }}>
+        <Grid container spacing={2} alignContent="center" justifyContent="center" sx={{ px: { xs: 2, sm: 3, md: 4, lg: 5 }, mx: 'auto', width: '100%', maxWidth: 'lg' }}>
           {images.map((image, index) => (
             <Grid item xs={12} sm={6} md={3} key={index}>
               <Slide direction="up" in={inView} delay={index * 100}>

@@ -5,11 +5,24 @@ import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import { Slide } from "react-awesome-reveal";
 import proyecto1 from "../../assets/im22.png";
-import proyecto2 from "../../assets/proyecto2.png";
+// import todoF from "../../assets/proyecto2.png";
 import docappoint from "../../assets/doca.jpeg";
-import thegarden from "../../assets/thega.jpeg";
+import pixie from "../../assets/q2.png";
+import cryptomc from "../../assets/q3.png";
+import cruzRoja from "../../assets/q3.png";
+import proveedora from "../../assets/q5.png";
+import garden from "../../assets/garden.png";
+import rifas from "../../assets/q7.png";
+import floral from "../../assets/floral1.png";
+import border from "../../assets/border.png";
+import aura from "../../assets/aura.png";
+import md from "../../assets/emp3.png";
+import cyrene from "../../assets/q10.png";
+import parkea from "../../assets/parkea.png";
 
-import rifas from "../../assets/rifas.png"
+// import todoF from "../../assets/Floral.png";
+
+// import rifas from "../../assets/rifas.png"
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
@@ -17,31 +30,65 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import "./styles.css"
- const Proyectos = () => {
+const Proyectos = () => {
   const projectImages = [
-    { imageUrl: proyecto2, url: "https://www.todofloral.com/", nombre: "Todo Floral" },
-    { imageUrl: docappoint, url: "https://www.todofloral.com/", nombre: "Docappoint" },
-    { imageUrl: thegarden, url: "https://www.todofloral.com/", nombre: "Proveedora de las artes graficas" },
-    { imageUrl: thegarden, url: "https://www.todofloral.com/", nombre: "Pixie Inmobiliaria" },
-    { imageUrl: thegarden, url: "https://www.todofloral.com/", nombre: "Canadevi" },
-    // { imageUrl: thegarden, url: "https://www.todofloral.com/", nombre: "Expo Casa" },
-    { imageUrl: thegarden, url: "https://www.todofloral.com/", nombre: "Videojuego_ratfundacity" },
-    { imageUrl: thegarden, url: "https://www.todofloral.com/", nombre: "Tcitramites Migratorios" },
+    {
+      imageUrl: floral, url: "https://www.todofloral.com/", nombre: "Todo Floral",
+      description: "Tienda en línea de venta de flores, con funciones personalizadas."
+    },
+    {
+      imageUrl: docappoint, url: "https://docappoint.com.mx/", nombre: "Docappoint",
+      description: "Página de Doctores."
+    },
+    { imageUrl: proveedora, url: "https://provartesgraficas.vercel.app/", nombre: "Proveedora de las artes graficas" },
+    {
+      imageUrl: pixie, url: "https://pixiebr.com/", nombre: "Pixie Inmobiliaria",
+      description: "Página informativa que cuenta con una calculadora de inversión de dinero e inmuebles. También cuentan con un sistema de gestión de usuarios y un sistema interno con predicciones e inteligencia artificial en python"
+    },
+    {
+      imageUrl: cryptomc, url: "https://crypto-rouge-omega.vercel.app/", nombre: "Cryptomc",
+      description: " Juego de criptos que conectando tu wallet podés jugar juegos de nft y ganar criptos.Este consiste en un servicio de delivery y porcentajes."
+    },
+    {
+      imageUrl: garden, url: "https://thegarden.com.mx/", nombre: "The Garden",
+      description: "E-commerce de una floreria."
+    },
+    { imageUrl: rifas, url: "https://www.todofloral.com/", nombre: "Rifas El Venado", description: "E-commerce de venta de ropa con rifas" },
+    {
+      imageUrl: cruzRoja, url: "http://analisis.cruzrojahmo.com/", nombre: "Asociacion de la Cruz Roja Mexicana"
+      , description: "Monitoreo de hospitales de la zona de Hermosillo.Los médicos pueden crear recetas.Se utiliza Web Scraping hecho con Python con la finalidad de hacer análisis de datos."
+    },
+    {
+      imageUrl: border, url: "https://bordermailboxes.com/", nombre: "Border Mailboxes",
+      description: "Empresa  que compra en Estados Unidos, que realizan el envio a un storage y el cliente retira los envíos en Hermosillo."
+    },
+    {
+      imageUrl: aura, url: "https://auradress.com/", nombre: "Aura Dress ",
+      description: "E-commerce de ropa.Venta de vestidos para quinceañeras y bodas."
+    },
+    // { imageUrl: md, url: "http://mdglobal.com.mx/", nombre: "MD Agencia" },
+    {
+      imageUrl: cyrene, url: "https://shopcyrene.com", nombre: "Shopcyrene"
+      , description: "Tienda de Ropa.Venta de vestidos,jeans,bikini,shorts.Se realizan promociones y envios."
+    },
+
+
+    {
+      imageUrl: parkea, url: "https://www.todofloral.com/", nombre: "Parkea"
+      , description: "Se pueden registrar estacionamientos y registrar evidencias sobre los autos."
+    }
     // { imageUrl: thegarden, url: "https://www.todofloral.com/", nombre: "Tramites migratorios Argentina-Estados Unidos" },
-    { imageUrl: thegarden, url: "https://www.todofloral.com/", nombre: "Mb Agencia" },
-    { imageUrl: thegarden, url: "https://www.todofloral.com/", nombre: "Rifas El Venado" },
-    { imageUrl: thegarden, url: "https://www.todofloral.com/", nombre: "Contraenseña" },
-    { imageUrl: thegarden, url: "https://www.todofloral.com/", nombre: "Asociacion de la Cruz Roja Mexicana" },
-    // { imageUrl: thegarden, url: "https://www.todofloral.com/", nombre: "Resume App" },
-    { imageUrl: thegarden, url: "https://www.todofloral.com/", nombre: "Border Mailboxes" },
-    { imageUrl: thegarden, url: "https://www.todofloral.com/", nombre: "Aura Dress " },
-    { imageUrl: thegarden, url: "https://www.todofloral.com/", nombre: "Shopcyrene" },
-    { imageUrl: thegarden, url: "https://www.todofloral.com/", nombre: "Cryptomc" },
+    // { imageUrl: thegarden, url: "https://www.todofloral.com/", nombre: "Tcitramites Migratorios" },
+    //  { imageUrl: thegarden, url: "https://www.todofloral.com/", nombre: "Resume App",description:"sacarle foto a los autos que estacionan" },
+
+    // { imageUrl: thegarden, url: "https://www.todofloral.com/", nombre: "Expo Casa" },
+    // { imageUrl: thegarden, url: "https://www.todofloral.com/", nombre: "Videojuego_ratfundacity" },
+    // { imageUrl: thegarden, url: "https://www.todofloral.com/", nombre: "Contraenseña" },  
     // { imageUrl: thegarden, url: "https://www.todofloral.com/", nombre: "Marsalesmx" },
 
 
 
-     
+
     // ... (otras imágenes)
   ];
 
@@ -68,9 +115,9 @@ import "./styles.css"
     textAlign: 'center',
     color: theme.palette.text.secondary,
   }));
-  
 
-const calculateDelay = (index) => {
+
+  const calculateDelay = (index) => {
     const baseDelay = 1000; // 1 segundo de retraso base
     const incrementalDelay = 500; // Incrementar 500ms por cada proyecto
     return baseDelay + (index * incrementalDelay);
@@ -78,160 +125,89 @@ const calculateDelay = (index) => {
 
   return (
     <div id="proyectos">
-      <Box sx={{ background: '#333333' ,height:"100vh" }}  >
+      <Box sx={{ background: '#333333', height: "100vh" }}  >
         <Slide direction="left" triggerOnce={false}>
-          <Typography  variant="h2" style={{color:"white", fontWeight: 700,fontFamily: "'Oswald', sans-serif" }} sx={{ display: "flex",paddingTop:"50px", justifyContent: "center", paddingBottom: "50px" }}>
+          <Typography variant="h2" style={{ color: "white", fontWeight: 700, fontFamily: "'Oswald', sans-serif" }} sx={{ display: "flex", paddingTop: "50px", justifyContent: "center", paddingBottom: "50px" }}>
             Proyectos
           </Typography></Slide>
-           
-         
-       {/* <Carousel
-  autoPlay={true}
-  interval={5000}
-  animation="slide"
-  indicators={false}
-  navButtonsAlwaysVisible={false}
-  index={currentChunk}
-  sx={{ padding: '0 16px' }}
->
+
+
+
+        <Carousel
+          autoPlay={true}
+          interval={5000}
+          animation="slide"
+          indicators={false}
+          navButtonsAlwaysVisible={false}
+          index={currentChunk}
+          sx={{ padding: '0 16px' }}
+        >
           {chunkedProjects.map((chunk, index) => (
-            <Grid container key={index}  justifyContent="space-around"  spacing={2}>
+            <Grid container key={index} spacing={2} alignItems="center" justifyContent="center">
               {chunk.map((project, subIndex) => (
-                
-                <Grid item xs={12} sm={6} md={3}  key={subIndex}>
-                  <Box   
-                    sx={{ 
-                      width: "350px",
-                      height: "250px",
+                <React.Fragment key={subIndex}>
+                  <Grid item xs={12} sm={6} md={6} lg={4.5} xl={3}>
+                    <Box sx={{
+                      width: "125%", // Asegúrate de que la imagen ocupa todo el ancho del Grid item
+                      height: "125%",
                       borderRadius: "10px",
                       marginTop: "50px",
                       backgroundColor: 'rgba(30, 30, 30, 0.56)',
-                      marginBottom: '2rem',
-                      transition: 'transform 0.3s',
                       position: 'relative',
                       overflow: 'hidden',
                     }}
-                    onMouseEnter={() => setHoverIndex(index)}
-                    onMouseLeave={() => setHoverIndex(null)}
-                  >
-                    <img  
-                      src={project.imageUrl}
-                      alt={`Proyecto ${index * chunkSize + subIndex + 1}`}
-                      style={{ width: '100%', height: '100%', objectFit: "cover", borderRadius: "10px" }}
-                    />
-<Link href={project.url} underline="none" target="_blank" rel="noopener">
-                    <Typography
-                      style={{
-                        fontFamily: "'Oswald', sans-serif",
-                        position: 'absolute',
-                        bottom: '-0px',
-                        left: '72.5px',
-                        background: 'linear-gradient(to bottom, #cccccc 0%, #333333 100%)',
-                        padding: '15px 60px',
-                        borderRadius: '5px',
-                        color: 'black',
-                        opacity: hoverIndex === index ? 1 : 0,
-                        transition: 'opacity 0.3s',
-                        fontWeight: "300px",
-                        fontSize: "20px"
-                      }}
+                      onMouseEnter={() => setHoverIndex(index)}
+                      onMouseLeave={() => setHoverIndex(null)}
                     >
-                      {project.nombre}
-                    </Typography></Link> 
-                    <Typography
-                      style={{
-                        fontFamily: "'Oswald', sans-serif",
-                        position: 'absolute',
-                        bottom: '-0px',
-                        left: '72.5px',
-                        background: 'linear-gradient(to bottom, #cccccc 0%, #333333 100%)',
-                        padding: '15px 60px',
-                        borderRadius: '5px',
-                        color: 'black',
-                        opacity: hoverIndex === index ? 1 : 0,
-                        transition: 'opacity 0.3s',
-                        fontWeight: "300px",
-                        fontSize: "20px"
-                      }}
-                    >
-                      Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-                    </Typography>  
-                  </Box>
-                   
-                </Grid>
+                      <Link href={project.url} underline="none" target="_blank" rel="noopener">
+
+                        <img
+                          src={project.imageUrl}
+                          alt={`Proyecto ${index * chunkSize + subIndex + 1}`}
+                          style={{ width: '100%', height: '100%', objectFit: "cover", borderRadius: "10px" }}
+                        />  </Link>
+                    </Box>
+                  </Grid>
+                  <Grid item xs={12} sm={4} md={6} lg={7} xl={9}>
+                    <Box sx={{
+                      p: 15,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'center',
+                      height: '250px', // Asegúrate de que este Box tiene la misma altura que el Box de la imagen
+                    }}>
+                      <Typography style={{
+                        color: "white",
+                        fontFamily: 'Oswald, sans-serif',
+                      }} variant="h3" gutterBottom>
+                        {project.nombre}
+                      </Typography>
+                      <Typography style={{
+                        color: "white",
+                        fontFamily: 'Oswald, sans-serif',
+                      }} gutterBottom>
+                        {project.description}
+                      </Typography>
+                      {/* <Typography style={{
+                        color: "white",
+                        fontFamily: 'Oswald, sans-serif',
+                      }}  >
+                        Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+                        Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+
+                        Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+
+                      </Typography> */}
+                    </Box>
+                  </Grid>
+                </React.Fragment>
               ))}
             </Grid>
           ))}
-        </Carousel>  
-  */}
-       
-      <Carousel
-  autoPlay={true}
-  interval={5000}
-  animation="slide"
-  indicators={false}
-  navButtonsAlwaysVisible={false}
-  index={currentChunk}
-  sx={{ padding: '0 16px' }}
->
-  {chunkedProjects.map((chunk, index) => (
-    <Grid container key={index} spacing={2} alignItems="center" justifyContent="center">
-      {chunk.map((project, subIndex) => (
-        <React.Fragment key={subIndex}>
-          <Grid item xs={12} sm={6} md={6} lg={4.5} xl={3}>
-            <Box sx={{
-              width: "125%", // Asegúrate de que la imagen ocupa todo el ancho del Grid item
-              height: "125%",
-              borderRadius: "10px",
-              marginTop: "50px",
-              backgroundColor: 'rgba(30, 30, 30, 0.56)',
-              position: 'relative',
-              overflow: 'hidden',
-            }}
-            onMouseEnter={() => setHoverIndex(index)}
-            onMouseLeave={() => setHoverIndex(null)}
-            >
-              <Link href={project.url} underline="none" target="_blank" rel="noopener">
-
-              <img  
-                src={project.imageUrl}
-                alt={`Proyecto ${index * chunkSize + subIndex + 1}`}
-                style={{ width: '100%', height: '100%', objectFit: "contain", borderRadius: "10px" }}
-              />  </Link>
-            </Box>
-          </Grid>
-          <Grid item xs={12} sm={4} md={6} lg={7} xl={9}>
-            <Box sx={{
-              p: 15,
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              height: '250px', // Asegúrate de que este Box tiene la misma altura que el Box de la imagen
-            }}>
-              <Typography style={{color:"white",
-        fontFamily: 'Oswald, sans-serif',
-       }}  variant="h4" gutterBottom>
-                {project.nombre}
-              </Typography>
-              <Typography  style={{color:"white",
-        fontFamily: 'Oswald, sans-serif',
-       }}  >
-                Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-                Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-
-                Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-
-              </Typography>
-            </Box>
-          </Grid>
-        </React.Fragment>
-      ))}
-    </Grid>
-  ))}
-</Carousel>
-</Box>
+        </Carousel>
+      </Box>
       {/* email */}
-      
+
       {/* <Box sx={{ width: '100%', height: "100vh", background: 'black' }}>
       <Slide direction="left" triggerOnce={false}>
           <Typography  variant="h2" style={{color:"white", fontFamily: "'Oswald', sans-serif" }} sx={{ display: "flex", justifyContent: "center" ,paddingTop:"50px" }}>
