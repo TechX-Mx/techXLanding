@@ -1,0 +1,17 @@
+  
+ @keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.scrollContainer {
+  white-space: nowrap;
+  overflow: hidden;
+  display: flex;
+  animation: scroll 10s linear infinite;
+}
+
+.scrollItem img {
+    max-width: 50px;  
+    height: auto;  
+  }

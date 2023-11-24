@@ -7,17 +7,20 @@ import empresa1 from '../../assets/empresa1.jpg';
 import empresa2 from '../../assets/logoCruzRoja.png';
 import empresa3 from '../../assets/pixieEmpresa.png';
 import empresa4 from '../../assets/parkea.jpeg';
-import empresa5 from '../../assets/empresa5.jpg';
-import empresa6 from '../../assets/empresa6.jpg';
-import empresa7 from '../../assets/empresa7.jpg';
-import empresa8 from '../../assets/empresa8.jpg';
+ import empresa5 from '../../assets/cryptoLogo.png';
+import empresa6 from '../../assets/proveedoraLogo.png';
+import empresa7 from '../../assets/gardenLogo.png';
+import empresa8 from '../../assets/borderLogo.png';
+import empresa9 from '../../assets/floralLogo.png';
+import empresa10 from '../../assets/mdLogo.png';
+
 const Clientes = () => {
   const { ref, inView } = useInView({
     threshold: 0.1,
     triggerOnce: true
   });
 
-  const images = [empresa3,empresa2,empresa4 ];
+  const images = [empresa2,empresa3,empresa4,empresa5,empresa6,empresa7,empresa8,empresa9,empresa10 ];
 
   return (
     <div>  
@@ -26,18 +29,18 @@ const Clientes = () => {
         sx={{
           width: '100%',
           display: 'flex',
-          height:"100vh",
+          height:"150vh",
           flexDirection: 'column',
           alignItems: 'center',
           paddingTop: "300px",
           background: '#333333',
-          px: { xs: 2, sm: 3, md: 4, lg: 5 }, // Esto establece el padding horizontal dependiendo del tamaño de la pantalla
-          py: 6, // Esto establece el padding vertical
+          px: { xs: 2, sm: 13, md: 14, lg: 5 }, // Esto establece el padding horizontal dependiendo del tamaño de la pantalla
+          py: 10, // Esto establece el padding vertical
           mx: 'auto', // Esto centra el Box en la pantalla con margenes automáticos
         }}
       >
         <Slide direction="left" triggerOnce={false} in={inView}>
-          <Typography variant="h2" paddingBottom="150px" paddingTop="0px" fontWeight="700" style={{ fontFamily: 'Oswald, sans-serif', color: "white" }}>
+          <Typography variant="h2" paddingBottom="100px" paddingTop="0px" fontWeight="700" style={{ fontFamily: 'Oswald, sans-serif', color: "white" }}>
             Nuestros Clientes
           </Typography>
         </Slide>
