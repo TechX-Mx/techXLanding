@@ -16,7 +16,7 @@ import miembro8 from "../../assets/miembro8.png";
 import miembro9 from "../../assets/miembro9.png";
 import miembro20 from "../../assets/miembro20.png";
 import miembro11 from "../../assets/miembro11.jpeg";
- import miembro12 from "../../assets/c.png";
+ import miembro12 from "../../assets/zyanya.jpeg";
 
 import Servicios from '../Servicios';
   const Nosotros = () => {

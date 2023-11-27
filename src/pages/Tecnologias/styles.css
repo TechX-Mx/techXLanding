@@ -1,17 +1,23 @@
-  
- @keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.scrollContainer {
-  white-space: nowrap;
+.ticker-wrap {
   overflow: hidden;
-  display: flex;
-  animation: scroll 10s linear infinite;
+  background-color: #333333; /* O el color que prefieras */
+  white-space: nowrap;
+  height:100vh ; padding-top: 200px; 
 }
 
-.scrollItem img {
-    max-width: 50px;  
-    height: auto;  
-  }
+.ticker {
+  display: inline-block;
+  animation: tickerMove 25s linear infinite;
+}
+
+@keyframes tickerMove {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.ticker-item {
+  display: inline-block;
+  padding: 0; /* Elimina cualquier relleno */
+  margin: 0; /* Elimina cualquier margen */
+  margin-right: 50px;
+}

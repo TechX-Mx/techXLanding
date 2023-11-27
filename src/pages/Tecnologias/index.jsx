@@ -34,8 +34,8 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
     { imageUrl: tecno4, nombre: "NODE JS" },
     { imageUrl: tecno5, nombre: "EXPRESS" },
     { imageUrl: tecno6, nombre: "MUI" },
-        { imageUrl: tecno7, nombre: "SELENIUM" },
-    { imageUrl: tecno8, nombre: "FLASK" },
+    { imageUrl: tecno7, nombre: "SELENIUM" },
+    // { imageUrl: tecno8, nombre: "FLASK" },
     { imageUrl: tecno9, nombre: "DJANGO" },
     { imageUrl: tecno10, nombre: "OPENCV" },
     { imageUrl: tecno11, nombre: "POSTGRES" },
@@ -44,9 +44,24 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
     { imageUrl: tecno14, nombre: "GITHUB" },
     { imageUrl: tecno15, nombre: "UNITY" },
     
-    // Agrega las URL de las imágenes restantes aquí
-  ];
-   
+   ];
+   const tecnologiasDuplicadas = [...tecnologias, ...tecnologias];
+
+  return (
+    <Box id="servicios" className="ticker-wrap "  >
+    <div className="ticker"  >
+        {tecnologias.map((tec, index) => (
+            <div key={index} className="ticker-item">
+                <img src={tec.imageUrl} alt={tec.nombre} style={{ height: '175px' }} />
+                {/* Puedes agregar más elementos aquí si lo deseas */}
+            </div>
+        ))}
+    </div>
+</Box>
+  );
+  };
+  
+  export default Tecnologias;
   // const [inView, setInView] = useState(false);
 
 
@@ -75,21 +90,7 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
      
 
 
-return (
-  <div id="servicios">
-    <Box  sx={{  height:"100vh"}} className="scrollContainer">
-      {tecnologias.map((tecnologia, index) => (
-        <Box key={index} className="scrollItem">
-          <img src={tecnologia.imageUrl} alt={tecnologia.nombre} />
-          <Typography>{tecnologia.nombre}</Typography>
-        </Box>
-      ))}
-    </Box>
-  </div>
-);
-};
-
-export default Tecnologias;
+ 
 
 
 
