@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Link, Stack, TextField, Typography } from '@mui/material';
+import { Box, Button, Grid, Link, Stack, TextField, Typography, useMediaQuery } from '@mui/material';
 import React, { useState, useRef } from 'react';
 import Carousel from 'react-material-ui-carousel';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
@@ -19,6 +19,7 @@ import linkedinFooterImg from "../../assets/logo4.svg"
 import emailjs from '@emailjs/browser';
 const Contacto = () => {
   const form = useRef();
+  const isNonMobileScreens = useMediaQuery('(min-width: 1000px)');
 
   const Item = styled("div")(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#red',
@@ -45,13 +46,21 @@ const Contacto = () => {
     <div>
       {/* email */}
 
-      <Box sx={{ width: '100%', height: "110vh", background: 'black' }}>
+      <Box sx={{ width: '100%', height: isNonMobileScreens?"125vh":"200vh", background: 'black' }}>
         <Slide direction="left" triggerOnce={false}>
           <Typography variant="h2" style={{ color: "white", fontFamily: "'Oswald', sans-serif", fontWeight: "700" }} sx={{ display: "flex", justifyContent: "center", paddingTop: "50px" }}>
             Contáctanos
           </Typography>
         </Slide>
-        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} justifyContent="flexStart" alignItems="flexStart" marginTop="25px" style={{ height: '100%' }}>
+        <Grid container 
+        rowSpacing={1} 
+        columnSpacing={{ xs: 60, sm: 2, md: 3 }} 
+        justifyContent={isNonMobileScreens ? "center" : "center"} 
+        alignItems={isNonMobileScreens ? "center" : "center"} 
+        style={{ 
+          height: '100%', 
+          flexDirection: isNonMobileScreens ? 'column' : 'row' 
+        }}>
           <Grid item xs={6} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <Box style={{ border: "5px solid white", padding: "10px", marginBottom: "10px", width: "300px" }}>
               <Typography sx={{ fontSize: "25px", color: "white", mb: 3, fontFamily: "'Oswald', sans-serif" }} >
@@ -114,13 +123,14 @@ const Contacto = () => {
 
             </Box>
           </Grid>
-          <Grid item xs={6} sx={{ display: 'flex', flexDirection: 'column', justifyItems: "center", alignItems: 'center', }}>
-            <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column', height: "425px", position: 'relative', background: "#CCCCCC", borderRadius: '50px', border: "1px solid white", padding: "10px", marginBottom: "10px", width: "300px" }}>
+          
+          <Grid item xs={1} sx={{marginTop:"10px", display: 'flex', flexDirection: 'column', justifyItems: "center", alignItems: 'center',marginBottom:"20px" }}>
+            <Box sx={{ display: 'flex', alignItems: 'center' , flexDirection: 'column', height: "425px", position: 'relative', background: "#CCCCCC", borderRadius: '50px', border: "1px solid white", padding: "10px", marginBottom: "10px", width: "300px" }}>
               <AccountCircleIcon sx={{ fontSize: 50, color: '#333333', mt: 2, }} />
-              <Stack spacing={2} sx={{ width: '100%', marginTop: "50px" }}>
-                <form ref={form} onSubmit={sendEmail}>
+              <Stack spacing={2} sx={{ width: '100%', marginTop: "50px"  }}>
+                <form  ref={form} onSubmit={sendEmail} >
                   <TextField
-                    sx={{
+                    sx={{marginLeft:"30px",
                       background: "#D3D3D3",
                       borderRadius: "15px",
                       '& .MuiOutlinedInput-root': {
@@ -139,7 +149,7 @@ const Contacto = () => {
                   />
 
                   <TextField
-                    sx={{
+                    sx={{marginLeft:"30px",
                       background: "#D3D3D3",
                       borderRadius: "15px",
                       '& .MuiOutlinedInput-root': {
@@ -158,7 +168,7 @@ const Contacto = () => {
                   />
 
                   <TextField
-                    sx={{
+                    sx={{marginLeft:"30px",
                       background: "#D3D3D3",
                       borderRadius: "15px",
                       height: "100px",

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Typography, Grid  } from '@mui/material';
+import { Box, Typography, Grid, useMediaQuery  } from '@mui/material';
 import Carousel from 'react-material-ui-carousel';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import {   Slide } from "react-awesome-reveal";
 
-import miembro1 from "../../assets/miembro1.png";
+import miembro1 from "../../assets/ba.jpg";
 import miembro2 from "../../assets/miembro2.png";
 import miembro3 from "../../assets/miembro3.png";
 import miembro4 from "../../assets/miembro4.png";
@@ -20,6 +20,7 @@ import miembro11 from "../../assets/miembro11.jpeg";
 
 import Servicios from '../Servicios';
   const Nosotros = () => {
+    const isNonMobileScreens = useMediaQuery('(min-width: 1000px)');
 
   const projectImages = [
     { imageUrl: miembro1, profesion: "CEO", nombre: "Mario Eduardo Diaz" },
@@ -89,7 +90,7 @@ import Servicios from '../Servicios';
               key={index}
               justifyContent="center"
               alignItems="center"
-              spacing={10}
+              spacing={isNonMobileScreens?"10":"0"}
               sx={{ padding: '20px' }}
             >
               {chunk.map((item, subIndex) => (
@@ -113,7 +114,7 @@ import Servicios from '../Servicios';
                     <img
                       src={item.imageUrl}
                       alt={`Miembro ${index * chunkSize + subIndex + 1}`}
-                      style={{ width: '152.8px', height: '156.99px', borderRadius: '50%' }}
+                      style={{ width: isNonMobileScreens?'152.8px':"125px", height:isNonMobileScreens?'156.99px':"125px", borderRadius: '50%' }}
                     />
                     <Typography fontSize="18px" sx={{ fontFamily: "'Oswald', sans-serif", color: 'black', marginTop: '10px' }}>
                       {item.profesion}

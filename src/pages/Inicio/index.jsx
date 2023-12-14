@@ -16,24 +16,27 @@ const Inicio = () => {
 
 
   return (
-    <div> <Box sx={{
+    <div id="inicio"> <Box sx={{
       backgroundColor: "white"
     }}>
 
-      <Landing />
+       <Landing />
       <Sobre />
-       <Estadisticas />  
-      <Clientes />
+           <Estadisticas />     
+        <Clientes />   
+       
       {/* <div id="proyectos"> */}
-               <Testimonios/>
-
+             
+                 <Testimonios/>  
         <Proyectos />  
-        <Contacto/>
+     <Contacto/>      
+
+
          {/* </div> */}
-      {/* <div id="servicios">  */}
-        {/* <Servicios />   */}
-        {/* </div> */}
-         {/* <Contacto/>  */}
+       {/* <div id="servicios">  
+          <Servicios />    
+         </div>  
+             <Contacto/>   */}
     </Box>
     </div>
   )
