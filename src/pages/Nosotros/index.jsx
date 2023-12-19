@@ -5,7 +5,7 @@ import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import {   Slide } from "react-awesome-reveal";
 
-import miembro1 from "../../assets/ba.jpg";
+import miembro1 from "../../assets/marioRecorte.png";
 import miembro2 from "../../assets/miembro2.png";
 import miembro3 from "../../assets/miembro3.png";
 import miembro4 from "../../assets/miembro4.png";
@@ -58,7 +58,7 @@ import Servicios from '../Servicios';
     <div id="nosotros">
       <Box sx={{ background: 'white' }}>
         <Slide direction="left" triggerOnce={false} in={inView}>
-          <Typography variant="h2" sx={{ display: "flex", justifyContent: "center", paddingTop: "62px", paddingBottom: "62px", fontWeight: 700, fontFamily: "'Oswald', sans-serif", color: 'black' }}>
+          <Typography  variant={isNonMobileScreens?"h2":"h4"} sx={{ paddingTop:isNonMobileScreens?"25px": "50px",display: "flex", justifyContent: "center",   fontWeight: 700, fontFamily: "'Oswald', sans-serif", color: 'black' }}>
             Nuestro Equipo
           </Typography>
         </Slide>
@@ -116,10 +116,10 @@ import Servicios from '../Servicios';
                       alt={`Miembro ${index * chunkSize + subIndex + 1}`}
                       style={{ width: isNonMobileScreens?'152.8px':"125px", height:isNonMobileScreens?'156.99px':"125px", borderRadius: '50%' }}
                     />
-                    <Typography fontSize="18px" sx={{ fontFamily: "'Oswald', sans-serif", color: 'black', marginTop: '10px' }}>
+                    <Typography fontSize="1rem" sx={{ fontFamily: "'Oswald', sans-serif", color: 'black', marginTop: '10px' }}>
                       {item.profesion}
                     </Typography>
-                    <Typography fontSize="18px" sx={{ fontFamily: "'Oswald', sans-serif", color: 'black' }}>
+                    <Typography fontSize="1.5rem" sx={{ fontFamily: "'Oswald', sans-serif", color: 'black' }}>
                       {item.nombre}
                     </Typography>
                   </Box>

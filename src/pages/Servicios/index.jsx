@@ -124,13 +124,13 @@ const Servicios = () => {
     <div id="servicios">
               <Slide direction="left" triggerOnce={false} in={inView}> 
 
-    <Typography style={{fontWeight: 700, fontFamily: "'Oswald', sans-serif",textAlign:"center"  }}  sx={{paddingTop:isNonMobileScreens?"40px":"0px" ,color:"white", display: "flex", justifyContent: "center", paddingBottom: isNonMobileScreens?"80px":"60px" , fontSize:"44px" }}>
+    <Typography  variant={isNonMobileScreens?"h2":"h4"} style={{fontWeight: 700, fontFamily: "'Oswald', sans-serif",textAlign:"center"  }}  sx={{paddingTop:isNonMobileScreens?"25px":"50px",  color:"white", display: "flex", justifyContent: "center", paddingBottom: isNonMobileScreens?"80px":"60px"  }}>
       ¿Qué podemos hacer por ti?
     </Typography> </Slide>
 
     <Grid sx={{background: 'black'  }} marginTop={-25} 
-     container justifyContent={isNonMobileScreens ? "center" : "center"}  columnSpacing={15} rowSpacing={20} 
-     paddingBottom='200px' paddingRight={isNonMobileScreens?"20":"0"} paddingLeft={isNonMobileScreens?"25":"0"} columns={{ xs: 0, sm: 8, md: 10, lg: 14.9 }}>
+     container justifyContent={isNonMobileScreens ? "center" : "center"}  columnSpacing={20} rowSpacing={20} 
+     paddingBottom='200px' paddingRight={isNonMobileScreens?"0px":"50px"} paddingLeft={isNonMobileScreens?"0px":"50px"} columns={{ xs: 0, sm: 8, md: 10, lg: 14 }}>
      
      
       {projectImages.map((image, index) => (
@@ -144,7 +144,7 @@ const Servicios = () => {
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              transition: 'transform 0.3s',rowSpacing:"200px"
+              transition: 'transform 0.3s',rowSpacing:"200px",marginTop:"2rem"
             }}
           >
             <img
